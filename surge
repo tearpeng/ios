@@ -1,0 +1,78 @@
+[General]
+# 日志级别
+loglevel = notify
+# 测试超时（秒）
+test-timeout = 3
+# Internet 测试 URL
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+# 代理测速 URL
+proxy-test-url = http://1.1.1.1/generate_204
+# GeoIP数据库
+geoip-maxmind-url = https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb
+# 游戏优化:开启后优先处理 UDP 数据，会增加系统负载
+udp-priority = true
+# UDP回退行为
+udp-policy-not-supported-behaviour = REJECT
+# DNS 服务器
+dns-server = 119.29.29.29
+# 加密DNS
+hijack-dns = *:53
+# DNS劫持
+always-real-ip = *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com*.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+# Always Real IP Hosts
+always-raw-tcp-hosts = 5.28.19*
+# 强行关闭对特定主机名的主动协议探测
+show-error-page-for-reject = true
+# 展示错误页面
+exclude-simple-hostnames = true
+# 排除简单主机名
+# tun-excluded-routes = 239.255.255.250/32
+# VIF Excluded Routes
+allow-wifi-access = false
+all-hybrid = false
+ipv6 = false
+ipv6-vif = disabled
+use-local-host-item-for-proxy = false
+
+[Proxy Group]
+节点订阅 = select, no-alert=0, hidden=0, include-all-proxies=0, policy-path=https://sub.store/download/degyax, update-interval=0, include-other-group=
+OpenAI = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅
+Telegram = smart, no-alert=0, hidden=0, include-all-proxies=0, persistent=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
+Emby = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, DIRECT, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅
+Spotify = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0
+香港节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
+美国节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600, tolerance=50, persistent=0
+狮城节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
+日本节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600, persistent=0
+台湾节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
+自动选择 = smart, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*((?i)(\b()\b)))(?!.*((?i)回国|2X|3X|5X|10X|30X|校园|流量|官网|官址|失联|到期|剩余|套餐|游戏|(\b(GAME)\b))).*$
+手动选择 = select, 自动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*((?i)(\b()\b)))(?!.*((?i)回国|2X|3X|5X|10X|30X|校园|流量|官网|官址|失联|到期|剩余|套餐|游戏|(\b(GAME)\b))).*$
+
+[Rule]
+DOMAIN,sdk.1rtb.net,REJECT
+RULE-SET,http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list/_end_/MyBlockAds.list?type=rule-set&target=surge-rule-set&del=true,REJECT
+RULE-SET,https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list,REJECT
+RULE-SET,https://gist.githubusercontent.com/daipengu/89c812fbb34be7d47a68c82d586016c5/raw/top500,DIRECT
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/APNs.list,DIRECT
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Apple.list,DIRECT
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Direct.list,DIRECT
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/OpenAI.list,OpenAI
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Telegram.list,Telegram
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Emby.list,Emby
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Spotify.list,Spotify
+RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/tld-not-cn.txt,手动选择
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list,手动选择
+DOMAIN-SUFFIX,cn,DIRECT
+IP-CIDR,0.0.0.0/32,REJECT,no-resolve
+RULE-SET,LAN,DIRECT
+GEOIP,CN,DIRECT,no-resolve
+FINAL,DIRECT
+
+[Host]
+*.cn = server:syslib
+
+[MITM]
+# MITM over HTTP/2
+h2 = true
+ca-passphrase = 326B98BE
+ca-p12 = 
