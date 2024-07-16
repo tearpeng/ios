@@ -1,0 +1,146 @@
+[General]
+real-ip = tsunaminet.cc
+doh-server = https://doh.pub/dns-query
+udp-fallback-mode = DIRECT
+domain-reject-mode = DNS
+ipv6 = false
+dns-server = 119.29.29.29,223.5.5.5
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+test-timeout = 2
+interface-mode = auto
+sni-sniffing = true
+disable-stun = false
+fast-switch = false
+disconnect-on-policy-change = true
+switch-node-after-failure-times = 3
+internet-test-url = http://223.6.6.6
+proxy-test-url = http://www.gstatic.com/generate_204
+resource-parser = https://gitlab.com/sub-store/Sub-Store/-/releases/permalink/latest/downloads/sub-store-parser.loon.min.js
+geoip-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+
+[Proxy]
+1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
+1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
+1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
+1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
+
+[Remote Proxy]
+dd9803fdcb8c2f3d = https://api.linkcube.xyz/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Flinkcube.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D8481%26token%3DNLyv8ObtjQZ6,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=true
+a85d0fa5d1b26128 = https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=false
+dd9803fdcb8c2f3d = https://api.linkcube.xyz/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Flinkcube.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D8481%26token%3DNLyv8ObtjQZ6,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=true
+a85d0fa5d1b26128 = https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=false
+
+[Remote Filter]
+欧盟节点 = NameRegex, FilterKey = "^(?i)(🇦🇹|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|奥地利|比利时|捷克|丹麦|芬兰|法国|德国|爱尔兰|意大利|立陶宛|卢森堡|荷兰|波兰|瑞典).*$"
+游戏节点 = NameRegex, FilterKey = "^(?=.*((?i)游戏|🎮|(\b(GAME)\b)))(?!.*((?i)回国|校园)).*$"
+全球节点 = NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
+香港节点 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+台湾节点 = NameRegex, FilterKey = "^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+日本节点 = NameRegex, FilterKey = "^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+韩国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+新国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+美国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+
+[Proxy Group]
+自动选择 = url-test,全球节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 30
+
+# 时延优选策略组
+香港优选 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+台湾优选 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+日本优选 = url-test,日本节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+韩国优选 = url-test,韩国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+狮城优选 = url-test,新国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+美国优选 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+IP位置 = select,DIRECT,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,全球节点,url = http://1.0.0.1,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ip.png
+Telegram = load-balance,全球节点,url = http://1.0.0.1,interval = 600,max-timeout = 150,algorithm = round-robin,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+AI分流 = select,选择代理,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://1.0.0.1,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/OpenAI_01.png
+TikTok = select,选择代理,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://www.gstatic.com/generate_204,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
+# --------------------------------
+# 兜底策略故障转移
+选择代理 = select,自动选择,手动选择,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://www.gstatic.com/generate_204,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Loon_9.png
+手动选择 = select,全球节点,url = http://www.gstatic.com/generate_204,img-url = pencil
+# --------------------------------
+# 手动策略组
+
+[Rule]
+DOMAIN,fileball.app,DIRECT
+DOMAIN-SUFFIX,1rtb.net,REJECT
+DOMAIN,api.revenuecat.com,DIRECT
+DOMAIN-SUFFIX,1rtb.net,REJECT
+DOMAIN,vc01.vc-vcity.com,选择代理
+DOMAIN,www.wanchengvpn.com,选择代理
+DOMAIN,mime.baidu.com,DIRECT
+DOMAIN,novaxns.one,选择代理
+DOMAIN,wxsnsdy.wxs.qq.com,DIRECT
+
+# Type:DOMAIN-SUFFIX, DOMAIN, DOMAIN-KEYWORD, USER-AGENT, URL-REGEX, IP-CIDR
+# Strategy:DIRECT, PROXY, REJECT
+# Options:no-resolve(only for cidr)
+# IP-CIDR, 192.168.0.0/16, DIRECT
+# IP-CIDR, 10.0.0.0/8, DIRECT
+# IP-CIDR, 172.16.0.0/12, DIRECT
+# IP-CIDR, 127.0.0.0/8, DIRECT
+# GEOIP, cn, DIRECT
+FINAL,选择代理
+
+[Remote Rule]
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/ApplePushNotificationService.list?ref_type=heads, policy=DIRECT, tag=Apns, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, policy=DIRECT, tag=Unbreak, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=DIRECT, tag=Apple, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list/_end_/MyBlockAds.list?type=rule-set&target=loon-rule-set&del=true, policy=REJECT, tag=MyBlockAds.list, enabled=true
+https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.list, policy=REJECT, tag=AWAvenue-Ads-Rule-Surge.list, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/PornAds.list/_end_/PornAds.list?type=rule-set&target=loon-rule-set&del=true, policy=REJECT, tag=PornAds.list, enabled=true
+https://gist.githubusercontent.com/daipengu/834a76694d47f5ec5cb18b1ec9861d73/raw/IP, policy=IP位置, tag=IP位置, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/TelegramDC.list/_end_/TelegramDC.list.txt?type=rule-set&target=loon-rule-set&del=true, policy=Telegram, tag=Telegram, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AI.list, policy=AI分流, tag=AI, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=选择代理, tag=ProxyLite, enabled=false
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=Lan, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=ChinaDomain.list, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/CN_REGION, policy=DIRECT, tag=CN, enabled=true
+
+[Host]
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/HTTPDNS.Block.plugin, enabled=true
+https://gist.githubusercontent.com/daipengu/94790503cd1d05685df3026060ba82fe/raw/dnsloon, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/tlp.js/_end_/tlp.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=塔罗牌, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weixin_external_links_unlock.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BaiduSearchWebpage_remove_ads.plugin, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/MyBlockAds.conf/_end_/MyBlockAds.plugin?type=qx-rewrite&target=loon-plugin&del=true, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/NeteaseCloudMusic_remove_ads.plugin, enabled=true
+http://script.hub/file/_start_/https://gist.githubusercontent.com/daipengu/e39df01f452f0aac408633f6f6d1150f/raw/wyy/_end_/wyy.plugin?type=surge-module&target=loon-plugin&del=true, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weibo_remove_ads.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Zhihu_remove_ads.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/RedPaper_remove_ads.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_remove_ads.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Amap_remove_ads.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/smzdm_remove_ads.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BingAI.plugin, policy=选择代理, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QuickSearch.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QQ_Redirect.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TikTok_redirect.plugin, policy=选择代理, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TestFlight.plugin, policy=DIRECT, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_lyrics_translation.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Google.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BoxJs.plugin, policy=选择代理, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Sub-Store.plugin, policy=选择代理, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Script-Hub.plugin, policy=选择代理, enabled=true
+
+[Mitm]
+skip-server-cert-verify = false
+# MITM over HTTP/2
+h2 = true
+ca-passphrase = 1V825T58
+ca-p12 = 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
