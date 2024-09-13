@@ -12,6 +12,7 @@ icmp-auto-reply = true
 always-reject-url-rewrite = false
 private-ip-answer = false
 update-url = 
+update-url = https://raw.githubusercontent.com/tearpeng/ios/main/Shadowrocket
 
 [Proxy Group]
 选择代理 = select,自动选择,PROXY
