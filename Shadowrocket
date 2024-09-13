@@ -1,4 +1,3 @@
-# Shadowrocket: 2024-09-13 18:57:49
 [General]
 bypass-system = true
 skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local
@@ -12,23 +11,22 @@ dns-direct-system = false
 icmp-auto-reply = true
 always-reject-url-rewrite = false
 private-ip-answer = false
-update-url =
+update-url = 
 
 [Proxy Group]
-🚀 策略选择 = select,自动选择,🇨🇳 台湾节点,🇬🇧 英国节点,🇯🇵 日本节点,🇭🇰 香港节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇰🇷 韩国节点,🇷🇺 俄罗斯节点,🇮🇳 印度,🇩🇪 德国,🇨🇦 加拿大,interval=600,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-自动选择 = url-test,policy-select-name=🇨🇳台湾01 | TW,interval=30,tolerance=60,timeout=3,url=http://www.gstatic.com/generate_204,policy-regex-filter=.*
-🇭🇰 香港节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城)).)*$
-🇨🇳 台湾节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
-🇺🇸 美国节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(美国|美國|US|洛杉矶|西雅图|(?i)States|American))^((?!(香港|台湾|日本|新加坡|韩国|狮城|南朝鲜|SG|JP|KR|HK|TW|台灣|韓國|獅城)).)*$
-🇰🇷 韩国节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(KR|Korea|KOR|首尔|韩|韓|(?i)Korea))^((?!(香港|台湾|新加坡|美国|狮城|南朝鲜|US|SG|HK|TW|台灣|美國|獅城)).)*$
-🇷🇺 俄罗斯节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=🇷🇺|俄罗斯|RU|莫斯科|圣彼得堡|喀山|哈尔科夫|乌法|新西伯利亚|下诺夫哥罗德|沃罗涅什
-🇬🇧 英国节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=🇬🇧|英国|UK|伦敦|英格兰|伯明翰|泰恩河畔纽卡斯尔|利兹|爱丁堡|格拉斯哥|苏格兰
-🇯🇵 日本节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(日本|JP|(?i)Japan))^((?!(香港|台湾|新加坡|美国|韩国|狮城|南朝鲜|US|SG|KR|HK|TW|台灣|美國|韓國|獅城)).)*$
-🇸🇬 新加坡节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(香港|台湾|日本|美国|韩国|南朝鲜|US|JP|KR|HK|TW|台灣|美國|韓國)).)*$
-🇮🇳 印度 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=🇮🇳|印度|IN|IND|孟买|新德里|高知|Republic of India|India
-🇩🇪 德国 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=🇩🇪|德国|DEU|DE|柏林|慕尼黑|汉堡|科隆|Germany
-🇨🇦 加拿大 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=🇨🇦|加拿大|CA|渥太华
+选择代理 = select,自动选择,PROXY
+自动选择 = url-test,policy-select-name=🇨🇳台湾01 | TW,interval=60,tolerance=60,timeout=3,url=http://captive.apple.com,policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
+Spotify = select,policy-select-name=🇨🇳台湾01 | TW,policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
+AI分流 = select,policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
+TikTok = select,policy-select-name=🇨🇳台湾01 | TW,policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
 
 [Rule]
-RULE-SET,https://whatshub.top/rule/ASN-lite.list,DIRECT
-FINAL,🚀 策略选择
+DOMAIN,wxsnsdy.wxs.qq.com,DIRECT
+RULE-SET,https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/Apple.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/Spotify.list,SPOTIFY
+RULE-SET,https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/TikTok.list,TIKTOK
+RULE-SET,https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AI.list,AI分流
+RULE-SET,https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list,REJECT
+GEOIP,CN,DIRECT
+FINAL,选择代理
