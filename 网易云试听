@@ -1,4 +1,4 @@
-#!name=网易无限试听
+#!name=网易云解锁
 [Script]
 # > 网易云解锁VIP
 Wyy = type=http-request, pattern=^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$, script-path=https://raw.githubusercontent.com/gjwj666/qx/main/Wyy.js, timeout=60
