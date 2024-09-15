@@ -1,9 +1,9 @@
 [general]
 
 # > 用于节点延迟测试
-server_check_url= http://www.gstatic.com/generate_204
+server_check_url= http://www.apple.com/library/test/success.html
 # > 服务器测试超时时间 (毫秒)
-server_check_timeout = 3000
+server_check_timeout = 2000
 # > 用于设置图标显示
 profile_img_url=https://github.githubassets.com/images/modules/site/integrators/google.png
 # > 用于Check节点IP地址(以下geo_location_checker任选一个即可)
@@ -13,7 +13,7 @@ geo_location_checker=disabled
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 # > 下列路径将不经过QuanX的处理
 excluded_routes=239.255.255.250/32, 24.105.30.129/32, 185.60.112.157/32, 185.60.112.158/32, 182.162.132.1/32
-udp_whitelist=443
+#udp_whitelist=443
 # > 第一个filter为4g模式开启规则分流，第二个filter为其他wifi下开启规则分流，第三个wifi1修改成你路由器翻墙的wifi名开启直连模式，第四个wifi2为你公司或者其他有路由器翻墙的WiFi名走直连）
 # > 默认关闭根据wifi切换模式，如需开启，删除下方的"#"即可
 #running_mode_trigger=filter, filter, wifi1:all_direct, wifi2: all_direct
@@ -23,39 +23,19 @@ dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.
 
 
 [task_local]
-0 0 * * * https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-task.js#force-timeout=10000&method=POST, tag=Sample, img-url=https://raw.githubusercontent.com/crossutility/Quantumult-X/master/quantumult-x.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP 查询, img-url=location.fill.viewfinder.system, enabled=true
 
 # > 请手动添加下面的订阅（流媒体Task订阅集合）
 ; https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/UI-Action.json
 # > 流媒体解锁查询
 event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁查询, img-url=arrowtriangle.right.square.system, enabled=true
 
+
 [dns]
-;circumvent-ipv4-answer=127.0.0.1, 0.0.0.0
-;circumvent-ipv6-answer=::
-;prefer-doh3
-;no-system
 no-ipv6
-;server=1.0.0.1
-;server=1.1.1.1
-;server=8.8.4.4
-;server=8.8.8.8
-;server=114.114.114.114
-;server=114.114.115.115
-
-;server=8.8.8.8
-;server=119.29.29.29
-
-;server=/*.com/119.29.29.29
-;server=/*.net/223.5.5.5
-;server=/*.cn/system
-;server=208.67.220.220
-;server=208.67.222.222
-;server=223.5.5.5
-;server=[2400:3200::1]
-;server=[2402:4e00::]
-;doq-server=quic://dns1.example.com, quic://dns2.example.com
-doh-server=https://doh.pub/dns-query,https://223.5.5.5/dns-query
+#prefer-doh3
+server=223.5.5.5
+server=119.29.29.29
 server = /*13th.tech/system
 server = /*423down.com/system
 server = /*bokecc.com/system
@@ -134,592 +114,79 @@ server = /*mxhichina.com/system
 server = /*soku.com/system
 server = /*taobao.com/system
 server = /*taobaocdn.com/system
-server = /*tbcache.com/system
-server = /*tbcdn.com/system
-server = /*tmall.com/system
-server = /*tmall.hk/system
-server = /*ucweb.com/system
-server = /*xiami.com/system
-server = /*xiami.net/system
-server = /*ykimg.com/system
-server = /*youku.com/system
-server = /*baidu.com/system
-server = /*baidubcr.com/system
-server = /*baidupcs.com/system
-server = /*baidustatic.com/system
-server = /*bcebos.com/system
-server = /*bdimg.com/system
-server = /*bdstatic.com/system
-server = /*bdurl.net/system
-server = /*hao123.com/system
-server = /*hao123img.com/system
-server = /*jomodns.com/system
-server = /*yunjiasu-cdn.net/system
-server = /*acg.tv/system
-server = /*acgvideo.com/system
-server = /*b23.tv/system
-server = /*bigfun.cn/system
-server = /*bigfunapp.cn/system
-server = /*biliapi.com/system
-server = /*biliapi.net/system
-server = /*bilibili.com/system
-server = /*bilibili.co/system
-server = /*biliintl.co/system
-server = /*biligame.com/system
-server = /*biligame.net/system
-server = /*bilivideo.com/system
-server = /*bilivideo.cn/system
-server = /*hdslb.com/system
-server = /*im9.com/system
-server = /*smtcdns.net/system
-server = /*amemv.com/system
-server = /*bdxiguaimg.com/system
-server = /*bdxiguastatic.com/system
-server = /*byted-static.com/system
-server = /*bytedance.com/system
-server = /*bytedance.net/system
-server = /*bytedns.net/system
-server = /*bytednsdoc.com/system
-server = /*bytegoofy.com/system
-server = /*byteimg.com/system
-server = /*bytescm.com/system
-server = /*bytetos.com/system
-server = /*bytexservice.com/system
-server = /*douyin.com/system
-server = /*douyincdn.com/system
-server = /*douyinpic.com/system
-server = /*douyinstatic.com/system
-server = /*douyinvod.com/system
-server = /*feelgood.cn/system
-server = /*feiliao.com/system
-server = /*gifshow.com/system
-server = /*huoshan.com/system
-server = /*huoshanzhibo.com/system
-server = /*ibytedapm.com/system
-server = /*iesdouyin.com/system
-server = /*ixigua.com/system
-server = /*kspkg.com/system
-server = /*pstatp.com/system
-server = /*snssdk.com/system
-server = /*toutiao.com/system
-server = /*toutiao13.com/system
-server = /*toutiaoapi.com/system
-server = /*toutiaocdn.com/system
-server = /*toutiaocdn.net/system
-server = /*toutiaocloud.com/system
-server = /*toutiaohao.com/system
-server = /*toutiaohao.net/system
-server = /*toutiaoimg.com/system
-server = /*toutiaopage.com/system
-server = /*wukong.com/system
-server = /*zijieapi.com/system
-server = /*zijieimg.com/system
-server = /*zjbyte.com/system
-server = /*zjcdn.com/system
-server = /*cctv.com/system
-server = /*cctvpic.com/system
-server = /*livechina.com/system
-server = /*21cn.com/system
-server = /*didialift.com/system
-server = /*didiglobal.com/system
-server = /*udache.com/system
-server = /*douyu.com/system
-server = /*douyu.tv/system
-server = /*douyuscdn.com/system
-server = /*douyutv.com/system
-server = /*epicgames.com/system
-server = /*epicgames.dev/system
-server = /*helpshift.com/system
-server = /*paragon.com/system
-server = /*unrealengine.com/system
-server = /*dbankcdn.com/system
-server = /*hc-cdn.com/system
-server = /*hicloud.com/system
-server = /*hihonor.com/system
-server = /*huawei.com/system
-server = /*huaweicloud.com/system
-server = /*huaweishop.net/system
-server = /*hwccpc.com/system
-server = /*vmall.com/system
-server = /*vmallres.com/system
-server = /*allawnfs.com/system
-server = /*allawno.com/system
-server = /*allawntech.com/system
-server = /*coloros.com/system
-server = /*heytap.com/system
-server = /*heytapcs.com/system
-server = /*heytapdownload.com/system
-server = /*heytapimage.com/system
-server = /*heytapmobi.com/system
-server = /*oppo.com/system
-server = /*oppoer.me/system
-server = /*oppomobile.com/system
-server = /*iflyink.com/system
-server = /*iflyrec.com/system
-server = /*iflytek.com/system
-server = /*71.am/system
-server = /*71edge.com/system
-server = /*iqiyi.com/system
-server = /*iqiyipic.com/system
-server = /*ppsimg.com/system
-server = /*qiyi.com/system
-server = /*qiyipic.com/system
-server = /*qy.net/system
-server = /*360buy.com/system
-server = /*360buyimg.com/system
-server = /*jcloudcs.com/system
-server = /*jd.com/system
-server = /*jd.hk/system
-server = /*jdcloud.com/system
-server = /*jdpay.com/system
-server = /*paipai.com/system
-server = /*iciba.com/system
-server = /*ksosoft.com/system
-server = /*ksyun.com/system
-server = /*kuaishou.com/system
-server = /*yximgs.com/system
-server = /*meitu.com/system
-server = /*meitudata.com/system
-server = /*meitustat.com/system
-server = /*meipai.com/system
-server = /*le.com/system
-server = /*lecloud.com/system
-server = /*letv.com/system
-server = /*letvcloud.com/system
-server = /*letvimg.com/system
-server = /*letvlive.com/system
-server = /*letvstore.com/system
-server = /*hitv.com/system
-server = /*hunantv.com/system
-server = /*mgtv.com/system
-server = /*duokan.com/system
-server = /*mi-img.com/system
-server = /*mi.com/system
-server = /*miui.com/system
-server = /*xiaomi.com/system
-server = /*xiaomi.net/system
-server = /*xiaomicp.com/system
-server = /*126.com/system
-server = /*126.net/system
-server = /*127.net/system
-server = /*163.com/system
-server = /*163yun.com/system
-server = /*lofter.com/system
-server = /*netease.com/system
-server = /*ydstatic.com/system
-server = /*youdao.com/system
-server = /*pplive.com/system
-server = /*pptv.com/system
-server = /*pinduoduo.com/system
-server = /*yangkeduo.com/system
-server = /*leju.com/system
-server = /*miaopai.com/system
-server = /*sina.com/system
-server = /*sina.com.cn/system
-server = /*sina.cn/system
-server = /*sinaapp.com/system
-server = /*sinaapp.cn/system
-server = /*sinaimg.com/system
-server = /*sinaimg.cn/system
-server = /*weibo.com/system
-server = /*weibo.cn/system
-server = /*weibocdn.com/system
-server = /*weibocdn.cn/system
-server = /*xiaoka.tv/system
-server = /*go2map.com/system
-server = /*sogo.com/system
-server = /*sogou.com/system
-server = /*sogoucdn.com/system
-server = /*sohu-inc.com/system
-server = /*sohu.com/system
-server = /*sohucs.com/system
-server = /*sohuno.com/system
-server = /*sohurdc.com/system
-server = /*v-56.com/system
-server = /*playstation.com/system
-server = /*playstation.net/system
-server = /*playstationnetwork.com/system
-server = /*sony.com/system
-server = /*sonyentertainmentnetwork.com/system
-server = /*cm.steampowered.com/system
-server = /*steamcontent.com/system
-server = /*steamusercontent.com/system
-server = /*steamchina.com/system
-server = /*csgo.wmsj.cn/system
-server = /*dota2.wmsj.cn/system
-server = /*wmsjsteam.com/system
-server = /*dl.steam.clngaa.com/system
-server = /*dl.steam.ksyna.com/system
-server = /*st.dl.bscstorage.net/system
-server = /*st.dl.eccdnx.com/system
-server = /*st.dl.pinyuncloud.com/system
-server = /*xz.pphimalayanrt.com/system
-server = /*steampipe.steamcontent.tnkjmec.com/system
-server = /*steampowered.com.8686c.com/system
-server = /*steamstatic.com.8686c.com/system
-server = /*foxmail.com/system
-server = /*gtimg.com/system
-server = /*idqqimg.com/system
-server = /*igamecj.com/system
-server = /*myapp.com/system
-server = /*myqcloud.com/system
-server = /*qq.com/system
-server = /*qqmail.com/system
-server = /*qqurl.com/system
-server = /*smtcdns.com/system
-server = /*smtcdns.net/system
-server = /*soso.com/system
-server = /*tencent-cloud.net/system
-server = /*tencent.com/system
-server = /*tencentmind.com/system
-server = /*tenpay.com/system
-server = /*wechat.com/system
-server = /*weixin.com/system
-server = /*weiyun.com/system
-server = /*appsimg.com/system
-server = /*appvipshop.com/system
-server = /*vip.com/system
-server = /*vipstatic.com/system
-server = /*ximalaya.com/system
-server = /*xmcdn.com/system
-server = /*00cdn.com/system
-server = /*88cdn.com/system
-server = /*kanimg.com/system
-server = /*kankan.com/system
-server = /*p2cdn.com/system
-server = /*sandai.net/system
-server = /*thundercdn.com/system
-server = /*xunlei.com/system
-server = /*got001.com/system
-server = /*p4pfile.com/system
-server = /*rrys.tv/system
-server = /*rrys2020.com/system
-server = /*yyets.com/system
-server = /*zimuzu.io/system
-server = /*zimuzu.tv/system
-server = /*zmz001.com/system
-server = /*zmz002.com/system
-server = /*zmz003.com/system
-server = /*zmz004.com/system
-server = /*zmz2019.com/system
-server = /*zmzapi.com/system
-server = /*zmzapi.net/system
-server = /*zmzfile.com/system
-server = /*teamviewer.com/system
-server = /*baomitu.com/system
-server = /*bootcss.com/system
-server = /*jiasule.com/system
-server = /*staticfile.org/system
-server = /*upaiyun.com/system
-server = /*doh.pub/system
-server = /*dns.alidns.com/system
-server = /*doh.360.cn/system
-server = /*10010.com/system
-server = /*115.com/system
-server = /*12306.com/system
-server = /*17173.com/system
-server = /*178.com/system
-server = /*17k.com/system
-server = /*360doc.com/system
-server = /*36kr.com/system
-server = /*3dmgame.com/system
-server = /*51cto.com/system
-server = /*51job.com/system
-server = /*51jobcdn.com/system
-server = /*56.com/system
-server = /*8686c.com/system
-server = /*abchina.com/system
-server = /*abercrombie.com/system
-server = /*acfun.tv/system
-server = /*air-matters.com/system
-server = /*air-matters.io/system
-server = /*aixifan.com/system
-server = /*algocasts.io/system
-server = /*babytree.com/system
-server = /*babytreeimg.com/system
-server = /*baicizhan.com/system
-server = /*baidupan.com/system
-server = /*baike.com/system
-server = /*biqudu.com/system
-server = /*biquge.com/system
-server = /*bitauto.com/system
-server = /*bosszhipin.com/system
-server = /*c-ctrip.com/system
-server = /*camera360.com/system
-server = /*cdnmama.com/system
-server = /*chaoxing.com/system
-server = /*che168.com/system
-server = /*chinacache.net/system
-server = /*chinaso.com/system
-server = /*chinaz.com/system
-server = /*chinaz.net/system
-server = /*chuimg.com/system
-server = /*cibntv.net/system
-server = /*clouddn.com/system
-server = /*cloudxns.net/system
-server = /*cn163.net/system
-server = /*cnblogs.com/system
-server = /*cnki.net/system
-server = /*cnmstl.net/system
-server = /*coolapk.com/system
-server = /*coolapkmarket.com/system
-server = /*csdn.net/system
-server = /*ctrip.com/system
-server = /*dangdang.com/system
-server = /*dfcfw.com/system
-server = /*dianping.com/system
-server = /*dilidili.wang/system
-server = /*douban.com/system
-server = /*doubanio.com/system
-server = /*dpfile.com/system
-server = /*duowan.com/system
-server = /*dxycdn.com/system
-server = /*dytt8.net/system
-server = /*easou.com/system
-server = /*eastday.com/system
-server = /*eastmoney.com/system
-server = /*ecitic.com/system
-server = /*element-plus.org/system
-server = /*ewqcxz.com/system
-server = /*fang.com/system
-server = /*fantasy.tv/system
-server = /*feng.com/system
-server = /*fengkongcloud.com/system
-server = /*fir.im/system
-server = /*frdic.com/system
-server = /*fresh-ideas.cc/system
-server = /*ganji.com/system
-server = /*ganjistatic1.com/system
-server = /*geetest.com/system
-server = /*geilicdn.com/system
-server = /*ghpym.com/system
-server = /*godic.net/system
-server = /*guazi.com/system
-server = /*gwdang.com/system
-server = /*gzlzfm.com/system
-server = /*haibian.com/system
-server = /*haosou.com/system
-server = /*hollisterco.com/system
-server = /*hongxiu.com/system
-server = /*huajiao.com/system
-server = /*hupu.com/system
-server = /*huxiucdn.com/system
-server = /*huya.com/system
-server = /*ifeng.com/system
-server = /*ifengimg.com/system
-server = /*images-amazon.com/system
-server = /*infzm.com/system
-server = /*ipip.net/system
-server = /*it168.com/system
-server = /*ithome.com/system
-server = /*ixdzs.com/system
-server = /*jianguoyun.com/system
-server = /*jianshu.com/system
-server = /*jianshu.io/system
-server = /*jianshuapi.com/system
-server = /*jiathis.com/system
-server = /*jmstatic.com/system
-server = /*jumei.com/system
-server = /*kaola.com/system
-server = /*knewone.com/system
-server = /*koowo.com/system
-server = /*ksyungslb.com/system
-server = /*kuaidi100.com/system
-server = /*kugou.com/system
-server = /*lancdns.com/system
-server = /*landiannews.com/system
-server = /*lanzou.com/system
-server = /*lanzoui.com/system
-server = /*lanzoux.com/system
-server = /*lemicp.com/system
-server = /*letitfly.me/system
-server = /*lizhi.fm/system
-server = /*lizhi.io/system
-server = /*lizhifm.com/system
-server = /*luoo.net/system
-server = /*lvmama.com/system
-server = /*lxdns.com/system
-server = /*maoyan.com/system
-server = /*meilishuo.com/system
-server = /*meituan.com/system
-server = /*meituan.net/system
-server = /*meizu.com/system
-server = /*migucloud.com/system
-server = /*miguvideo.com/system
-server = /*mobike.com/system
-server = /*mogu.com/system
-server = /*mogucdn.com/system
-server = /*mogujie.com/system
-server = /*moji.com/system
-server = /*moke.com/system
-server = /*msstatic.com/system
-server = /*mubu.com/system
-server = /*myunlu.com/system
-server = /*nruan.com/system
-server = /*nuomi.com/system
-server = /*onedns.net/system
-server = /*oneplus.com/system
-server = /*onlinedown.net/system
-server = /*oracle.com/system
-server = /*oschina.net/system
-server = /*ourdvs.com/system
-server = /*polyv.net/system
-server = /*qbox.me/system
-server = /*qcloud.com/system
-server = /*qcloudcdn.com/system
-server = /*qdaily.com/system
-server = /*qdmm.com/system
-server = /*qhimg.com/system
-server = /*qianqian.com/system
-server = /*qidian.com/system
-server = /*qihucdn.com/system
-server = /*qin.io/system
-server = /*qiniu.com/system
-server = /*qiniucdn.com/system
-server = /*qiniudn.com/system
-server = /*qiushibaike.com/system
-server = /*quanmin.tv/system
-server = /*qunar.com/system
-server = /*qunarzz.com/system
-server = /*realme.com/system
-server = /*repaik.com/system
-server = /*ruguoapp.com/system
-server = /*runoob.com/system
-server = /*sankuai.com/system
-server = /*segmentfault.com/system
-server = /*sf-express.com/system
-server = /*shumilou.net/system
-server = /*simplecd.me/system
-server = /*smzdm.com/system
-server = /*snwx.com/system
-server = /*soufunimg.com/system
-server = /*sspai.com/system
-server = /*startssl.com/system
-server = /*suning.com/system
-server = /*synology.com/system
-server = /*taihe.com/system
-server = /*th-sjy.com/system
-server = /*tianqi.com/system
-server = /*tianqistatic.com/system
-server = /*tianyancha.com/system
-server = /*tianyaui.com/system
-server = /*tietuku.com/system
-server = /*tiexue.net/system
-server = /*tmiaoo.com/system
-server = /*trip.com/system
-server = /*ttmeiju.com/system
-server = /*tudou.com/system
-server = /*tuniu.com/system
-server = /*tuniucdn.com/system
-server = /*umengcloud.com/system
-server = /*upyun.com/system
-server = /*uxengine.net/system
-server = /*videocc.net/system
-server = /*vivo.com/system
-server = /*wandoujia.com/system
-server = /*weather.com/system
-server = /*weico.cc/system
-server = /*weidian.com/system
-server = /*weiphone.com/system
-server = /*weiphone.net/system
-server = /*womai.com/system
-server = /*wscdns.com/system
-server = /*xdrig.com/system
-server = /*xhscdn.com/system
-server = /*xiachufang.com/system
-server = /*xiaohongshu.com/system
-server = /*xiaojukeji.com/system
-server = /*xinhuanet.com/system
-server = /*xip.io/system
-server = /*xitek.com/system
-server = /*xiumi.us/system
-server = /*xslb.net/system
-server = /*xueqiu.com/system
-server = /*yach.me/system
-server = /*yeepay.com/system
-server = /*yhd.com/system
-server = /*yihaodianimg.com/system
-server = /*yinxiang.com/system
-server = /*yinyuetai.com/system
-server = /*yixia.com/system
-server = /*ys168.com/system
-server = /*yuewen.com/system
-server = /*yy.com/system
-server = /*yystatic.com/system
-server = /*zealer.com/system
-server = /*zhangzishi.cc/system
-server = /*zhanqi.tv/system
-server = /*zhaopin.com/system
-server = /*zhihu.com/system
-server = /*zhimg.com/system
-server = /*zhipin.com/system
-server = /*zhongsou.com/system
-server = /*zhuihd.com/system
-server = /*icloud.com/system
-server = /*apple.com/system
 
 [policy]
 static=选择代理, 自动选择, 香港优选, 台湾优选, 日本优选, 韩国优选, 狮城优选, 美国优选, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_4.png
 static=Spotify, 选择代理,香港优选, 台湾优选, 日本优选, 韩国优选, 狮城优选, 美国优选, direct, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/spotify.png
-
 static=TikTok, 选择代理,香港优选, 台湾优选, 日本优选, 韩国优选, 狮城优选, 美国优选, direct, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
-
 static=Ai分流, 选择代理,香港优选, 台湾优选, 日本优选, 韩国优选, 狮城优选, 美国优选, direct, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/OpenAI_01.png
-round-robin=Telegram, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/Telegram.png
+
+static=Telegram, 选择代理, 台湾优选, 香港优选, 日本优选, 韩国优选, 狮城优选, 美国优选, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+
 static=IP位置, direct,香港优选, 台湾优选, 日本优选, 韩国优选, 狮城优选, 美国优选, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ip.png
-url-latency-benchmark=台湾优选, server-tag-regex=(?i)(🇹🇼|🇨🇳|台|台湾|台灣|\b(TW|Taiwan)\b), img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/tw.png
-url-latency-benchmark=香港优选, server-tag-regex=(?i)(🇭🇰|港|香港|\b(HK|Hong\x20?Kong)\b), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/hk.png
-url-latency-benchmark=日本优选, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=900, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
-url-latency-benchmark=韩国优选, server-tag-regex=(?i)(🇰🇷|韩|韓|韩国|韓國|首尔|南朝鲜|\b(KR|KOR|Korea|South\x20?Korea)\b), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/kor.png
-url-latency-benchmark=狮城优选, server-tag-regex=(?i)(🇸🇬|新|坡|新加坡|狮城|\b(SG|Singapore)\b), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/sp.png
-url-latency-benchmark=美国优选, server-tag-regex=(?i)(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\b(US|United\x20?States|American)\b), check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/us.png
-url-latency-benchmark=自动选择, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|剩余|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持 |traffic|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_1.png
+url-latency-benchmark=台湾优选, server-tag-regex=(?i)(🇹🇼|🇨🇳|台|台湾|台灣|\b(TW|Taiwan)\b), check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/tw.png
+url-latency-benchmark=香港优选, server-tag-regex=(?i)(🇭🇰|港|香港|\b(HK|Hong\x20?Kong)\b), check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/hk.png
+url-latency-benchmark=日本优选, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=600, tolerance=50, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+url-latency-benchmark=韩国优选, server-tag-regex=(?i)(🇰🇷|韩|韓|韩国|韓國|首尔|南朝鲜|\b(KR|KOR|Korea|South\x20?Korea)\b), check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/kor.png
+url-latency-benchmark=狮城优选, server-tag-regex=(?i)(🇸🇬|新|坡|新加坡|狮城|\b(SG|Singapore)\b), check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/sp.png
+url-latency-benchmark=美国优选, server-tag-regex=(?i)(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\b(US|United\x20?States|American)\b), check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/RuCu6/QuanX/main/Icons/area/us.png
+url-latency-benchmark=自动选择, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|剩余|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持 |traffic|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, check-interval=600, tolerance=50, alive-checking=false, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_1.png
 [server_remote]
-https://chromegoclash.marcol.top/, tag=Tag-1721112211, update-interval=172800, opt-parser=true, enabled=false
-https://cloud.tpc.re/api/v1/client/subscribe?token=d81226553ad6a1b63058b24de9dd17d7, tag=Tag-1721066433, update-interval=172800, opt-parser=true, enabled=false
-https://sub-01.767564.xyz/api/v1/client/subscribe?token=971f2a12370852852c027c8f15c3494c, tag=Tag-1720692264, update-interval=172800, opt-parser=true, enabled=false
-https://degyax.one/api/v1/client/subscribe?token=d5e9640bf8e790c4527e2fed5a670a63, tag=Tag-1720273860, update-interval=172800, opt-parser=true, enabled=false
-https://api.linkcube.xyz/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Flinkcube.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D8481%26token%3DNLyv8ObtjQZ6, tag=linkcube, update-interval=172800, opt-parser=false, enabled=true
+https://sub-01.767564.xyz/api/v1/client/subscribe?token=971f2a12370852852c027c8f15c3494c, tag=Tag-1726227616, update-interval=172800, opt-parser=false, enabled=false
+https://38.47.221.60:10000/api/v1/client/subscribe?token=f93cbfcffc6675100746a2d31cc6242d, tag=ctc, update-interval=172800, opt-parser=false, enabled=true
+https://degyax.one/api/v1/client/subscribe?token=42890e569f424c6cf34df66bcfb36bb1, tag=degyax, update-interval=172800, opt-parser=true, enabled=true
+https://url.ayanami-subscribe-url.online/api/v1/client/subscribe?token=396555ba764dfced262f057537f9d089, tag=sese, update-interval=172800, opt-parser=true, enabled=false
+https://38.47.221.60:10000/api/v1/client/subscribe?token=3727618b9736a698304a15f993007f2b, tag=CTC, update-interval=172800, opt-parser=true, enabled=false
+https://gist.githubusercontent.com/tearpeng/181100dd0b9d88680f4848ae05d4225e/raw/warpqx, tag=warp, update-interval=172800, opt-parser=false, enabled=true
 #
 [filter_remote]
+https://github.com/VirgilClyne/GetSomeFries/raw/main/ruleset/HTTPDNS.Block.list, tag=禁用HTTPDNS, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://gist.githubusercontent.com/daipengu/834a76694d47f5ec5cb18b1ec9861d73/raw/IP, tag=IP, force-policy=IP位置, update-interval=172800, opt-parser=true, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Clash/Rule/Filen.yaml, tag=Filen, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=WeChat, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list, tag=MyBlockAds, force-policy=reject, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/PornAds.list, tag=PornAds, force-policy=reject, update-interval=-1, opt-parser=false, enabled=true
-https://gist.githubusercontent.com/daipengu/834a76694d47f5ec5cb18b1ec9861d73/raw/IP, tag=IP位置, force-policy=IP位置, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, tag=Apple, force-policy=direct, update-interval=-1, opt-parser=true, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AI.list, tag=AI分流, force-policy=Ai分流, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/PornAds.list, tag=PornAds, force-policy=reject, update-interval=-1, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, tag=Telegram, force-policy=Telegram, update-interval=172800, opt-parser=true, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/TikTok.list, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AI.list, tag=AI分流, force-policy=Ai分流, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/Spotify.list, tag=Spotify, force-policy=Spotify, update-interval=-1, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/Apple.list, tag=Apple, force-policy=direct, update-interval=-1, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/Apple.list, tag=Apple服务, force-policy=direct, update-interval=-1, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, tag=直连域名, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 FILTER_LAN, tag=Lan, force-policy=direct, update-interval=-1, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, tag=ChinaDomain, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/CN_REGION, tag=CN, force-policy=direct, update-interval=-1, opt-parser=true, enabled=true
+FILTER_REGION, tag=CN, force-policy=direct, update-interval=-1, opt-parser=true, enabled=true
 #
 [rewrite_remote]
-https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/QX.snippet, tag=Sub-Store, update-interval=172800, opt-parser=true, enabled=true
-https://gist.githubusercontent.com/daipengu/2a451d2909d8a4800f1c1c62c7809c65/raw/zgyd, tag=中国移动, update-interval=172800, opt-parser=true, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weixin_external_links_unlock.plugin, tag=微信解锁被屏蔽的URL, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/MyBlockAds.conf, tag=MyBlockAds, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/cloudmusic.snippet, tag=cloudmusic, update-interval=-1, opt-parser=false, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BaiduSearchWebpage_remove_ads.plugin, tag=百度首页去广, update-interval=172800, opt-parser=true, enabled=true
-https://gist.githubusercontent.com/daipengu/e39df01f452f0aac408633f6f6d1150f/raw/wyy, tag=网易云解锁, update-interval=172800, opt-parser=true, enabled=true
-https://github.com/ddgksf2013/Rewrite/raw/master/Html/Q-Search.conf, tag=Safari快捷搜索, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/id77/QuantumultX/master/rewrite/Youtube_CC.conf#out=Hant, tag=YouTube字幕, update-interval=172800, opt-parser=false, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/DragonRead_remove_ads.plugin, tag=番茄小说, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/TestFlight.conf, tag=TestFlight, update-interval=-1, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/bilibili.snippet, tag=bilibili, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/cainiao.snippet, tag=cainiao, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/caixin.snippet, tag=caixin, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/cnftp.snippet, tag=cnftp, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/ithome.snippet, tag=ithome, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/spotify.snippet, tag=spotify, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/weibo.snippet, tag=weibo, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/xiaohongshu.snippet, tag=xiaohongshu, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/youtube.snippet, tag=youtube, update-interval=-1, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/zhihu.snippet, tag=zhihu, update-interval=-1, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, tag=iTunes合集, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, tag=Revenuecat解锁合集, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/bhjk.js, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/QX.snippet, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/NeteaseAds.conf, tag=网易云净化, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Script_X/main/Collections.conf, tag=APP解锁合集, update-interval=172800, opt-parser=false, enabled=false
+https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf, update-interval=172800, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/youtube.snippet, tag=youtube, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/MyBlockAds.conf, tag=MyBlockAds, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/CaiYunAds.conf, tag=彩云天气, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/WeiGiegie/666/main/qingtu.js, tag=轻图, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/tearpeng/ios/main/网易云试听, tag=网易云解锁, update-interval=172800, opt-parser=true, enabled=true
+
+# ======= 会员解锁 ======= #
+
+
+# ======= 广告净化 ======= #
+
+
+# ======= 网页优化 ======= #
+
+
+# ======= 功能增强 ======= #
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信解锁被屏蔽的URL@zZPiglet, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=BoxJS商店版@chavyleung, update-interval=86400, opt-parser=false, enabled=false
 #
 [server_local]
 #
 [filter_local]
+host-suffix, theatre.tsunaminet.cc, direct
+host, www.baidu.com, direct
 host-suffix, fileball.app, direct
 
 host-suffix, heimuertv.com, direct
@@ -729,13 +196,6 @@ host-suffix, tsunaminet.cc, direct
 host,mime.baidu.com, direct
 DOMAIN,wxsnsdy.wxs.qq.com,DIRECT
 DOMAIN-KEYWORD,pangolin-sdk-toutiao,DIRECT
-IP-ASN,62014,Telegram
-IP-ASN,62041,Telegram
-IP-ASN,44907,Telegram
-IP-ASN,59930,Telegram
-IP-ASN,211157,Telegram
-IP-CIDR,5.28.192.0/18,Telegram
-IP-CIDR,109.239.140.0/24,Telegram
 final, 选择代理
 #
 [rewrite_local]
@@ -743,12 +203,105 @@ final, 选择代理
 
 ^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\?sdk_version=2\.4\.4\.1&device_os=iOS&accept_ad_type=4&app_id=110184&pid=1047410&sdk_version_code=2040401 url reject-dict
 
+#!name=🍟 Fries: 🚫 Block HTTPDNS
+#!desc=阻止常见的 HTTPDNS 服务器
+#!author=VirgilClyne
+#!homepage=https://github.com/VirgilClyne/GetSomeFries/wiki/🚫-HTTPDNS
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png
+#!category=🍟 Fries
+
+#[rewrite_local]
+# Alipay
+^https?:\/\/amdc\.alipay\.com\/s?query url reject
+^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query url reject
+^https?:\/\/110\.76\.8\.150\/squery url reject
+^https?:\/\/203\.209\.230\.39\/squery url reject
+^https?:\/\/203\.209\.245\.102\/squery url reject
+^https?:\/\/203\.209\.245\.158\/squery url reject
+^https?:\/\/203\.209\.247\.95\/squery url reject
+^https?:\/\/203\.209\.250\.41\/squery url reject
+^https?:\/\/203\.209\.250\.114\/squery url reject
+^https?:\/\/203\.209\.251\.147\/squery url reject
+^https?:\/\/2400:B180:6001::18F\/squery url reject
+^https?:\/\/2400:B200:1005:3000::155\/squery url reject
+^https?:\/\/2400:B200:1005:3000::1D3\/squery url reject
+^https?:\/\/2400:B200:5000:B000::C8\/squery url reject
+
+# Baidu
+^http:\/\/180\.76\.76\.112\/v4\/resolve url reject
+^http:\/\/180\.76\.76\.220\/v4\/resolve url reject
+
+# Bilibili
+# KEY_EXT_P2P_HTTPDNS_BILI_IP
+^http:\/\/47\.101\.175\.206\/resolve url reject
+^http:\/\/47\.100\.123\.169\/resolve url reject
+^http:\/\/120\.46\.169\.234\/resolve url reject
+^http:\/\/121\.36\.72\.124\/resolve url reject
+# KEY_EXT_P2P_BILIDNS_CMCC_IP
+^http:\/\/116\.63\.10\.135\/resolve url reject
+^http:\/\/122\.9\.7\.134\/resolve url reject
+^http:\/\/117\.185\.228\.108\/resolve url reject
+^http:\/\/117\.144\.238\.29\/resolve url reject
+# KEY_EXT_P2P_BILIDNS_CT_IP
+^http:\/\/122\.9\.13\.79\/resolve url reject
+^http:\/\/122\.9\.15\.129\/resolve url reject
+^http:\/\/101\.91\.140\.224\/resolve url reject
+^http:\/\/101\.91\.140\.124\/resolve url reject
+# KEY_EXT_P2P_BILIDNS_CU_IP
+^http:\/\/114\.116\.215\.110\/resolve url reject
+^http:\/\/116\.63\.10\.31\/resolve url reject
+^http:\/\/112\.64\.218\.119\/resolve url reject
+^http:\/\/112\.65\.200\.117\/resolve url reject
+
+# JD
+^https:\/\/dns\.jd\.com\/v6\/b url reject
+
+# Meituan
+^http:\/\/103\.37\.155\.60\/fetch url reject
+
+# Pinduoduo
+^http:\/\/101\.35\.204\.35\/d url reject
+^http:\/\/101\.35\.212\.35\/d url reject
+^http:\/\/114\.110\.96\.26\/d url reject
+^http:\/\/114\.110\.97\.97\/d url reject
+
+# QCloud
+# refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
+# refer: https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
+# refer: https://cloud.tencent.com/document/product/379/61200
+^https?:\/\/119\.29\.29\.29\/d url reject
+
+# QQmusic
+^http:\/\/182\.256\.116\.116\/d url reject
+
+# Weibo
+# refer: https://github.com/CNSRE/HTTPDNSLib-for-iOS
+^http:\/\/api\.weibo\.cn\/2\/httpdns\/config url reject
+^http:\/\/api\.weibo\.cn\/httpdns\/config url reject
+
+# Weixin
+# 注意: 以下域名HTTPS无法MitM，如通过此链接查询，无法处理
+^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns url reject
+^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns url reject
+^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
+^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns url reject
+
+# Wework
+# refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+^http:\/\/182\.254\.116\.117\/d url reject
+^http:\/\/182\.254\.118\.119\/d url reject
+
+# Zhihu
+# refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
+^http:\/\/103\.41\.167\.237\/v2\/resolv url reject
+
+
 
 
 [http_backend]
 #
 [mitm]
-hostname = pgdt.ugdtimg.com, s3plus.meituan.net, image.uczzd.cn, sdk.1rtb.net, acs.m.taobao.com
+hostname = pgdt.ugdtimg.com, s3plus.meituan.net, image.uczzd.cn, sdk.1rtb.net, acs.m.taobao.com,119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com
 passphrase = 326B98BE
 p12 = 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
 ;passphrase=0
