@@ -1,6 +1,5 @@
 [General]
-real-ip = tsunaminet.cc
-doh-server = https://doh.pub/dns-query
+real-ip = *waimaimingtang.com,*meituan.net,*meituan.com,*umeng.com,*dianping.com
 udp-fallback-mode = DIRECT
 domain-reject-mode = DNS
 ipv6 = false
@@ -8,31 +7,28 @@ dns-server = 119.29.29.29,223.5.5.5
 wifi-access-http-port = 7222
 wifi-access-socks5-port = 7221
 allow-wifi-access = false
-test-timeout = 2
-interface-mode = auto
+test-timeout = 3
+interface-mode = performance
 sni-sniffing = true
 disable-stun = false
 fast-switch = false
 disconnect-on-policy-change = true
 switch-node-after-failure-times = 3
-internet-test-url = http://223.6.6.6
-proxy-test-url = http://www.gstatic.com/generate_204
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+proxy-test-url = http://www.apple.com/library/test/success.html
 resource-parser = https://gitlab.com/sub-store/Sub-Store/-/releases/permalink/latest/downloads/sub-store-parser.loon.min.js
 geoip-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com,*meituan.com,*dianping.com,*.meituan.net,*waimaimingtang.com,*umeng.com,77.72.169.210
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 
 [Proxy]
 1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
-1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
-1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
-1_CF ➮ SG p.18102307631.workers.dev¹ = vless,sg.cf.zhetengsha.eu.org,2052,"f9b8337a-a86c-4fd6-b31f-b7b9edc835de",transport=ws,path=/proxyIP= sg.cf.zhetengsha.eu.org,host=p.18102307631.workers.dev,udp=true,over-tls=false
 
 [Remote Proxy]
-dd9803fdcb8c2f3d = https://api.linkcube.xyz/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Flinkcube.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D8481%26token%3DNLyv8ObtjQZ6,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=true
-a85d0fa5d1b26128 = https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=false
-dd9803fdcb8c2f3d = https://api.linkcube.xyz/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Flinkcube.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D8481%26token%3DNLyv8ObtjQZ6,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=true
-a85d0fa5d1b26128 = https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt,parser-enabled = true,udp=true,fast-open=true,vmess-aead=true,enabled=false
+7c53c8c9bed9fab2 = https://3.u200.xyz/api/v1/client/subscribe?token=a03aeaeed470ff9eefd2399e5ad450b2&flag=shadowrocket,udp=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false
+fda759bd6418ba23 = https://gist.githubusercontent.com/tearpeng/181100dd0b9d88680f4848ae05d4225e/raw/warpqx,parser-enabled = true,udp=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true
+ctc = https://38.47.221.60:10000/api/v1/client/subscribe?token=f93cbfcffc6675100746a2d31cc6242d,udp=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true
+sese = https://url.ayanami-subscribe-url.online/api/v1/client/subscribe?token=396555ba764dfced262f057537f9d089,udp=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=false
 
 [Remote Filter]
 欧盟节点 = NameRegex, FilterKey = "^(?i)(🇦🇹|🇧🇪|🇨🇿|🇩🇰|🇫🇮|🇫🇷|🇩🇪|🇮🇪|🇮🇹|🇱🇹|🇱🇺|🇳🇱|🇵🇱|🇸🇪|奥地利|比利时|捷克|丹麦|芬兰|法国|德国|爱尔兰|意大利|立陶宛|卢森堡|荷兰|波兰|瑞典).*$"
@@ -46,18 +42,18 @@ a85d0fa5d1b26128 = https://raw.githubusercontent.com/markbang/chromegopacs/main/
 美国节点 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 
 [Proxy Group]
-自动选择 = url-test,全球节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 30
+自动选择 = url-test,全球节点,url = http://captive.apple.com,interval = 60,tolerance = 50,img-url = pencil.and.outline
 
 # 时延优选策略组
 香港优选 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
 台湾优选 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
-日本优选 = url-test,日本节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
-韩国优选 = url-test,韩国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
-狮城优选 = url-test,新国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+日本优选 = url-test,日本节点,url = http://captive.apple.com,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+韩国优选 = url-test,韩国节点,url = http://captive.apple.com,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+狮城优选 = url-test,新国节点,url = http://captive.apple.com,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
 美国优选 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
 IP位置 = select,DIRECT,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,全球节点,url = http://1.0.0.1,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ip.png
-Telegram = load-balance,全球节点,url = http://1.0.0.1,interval = 600,max-timeout = 150,algorithm = round-robin,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-AI分流 = select,选择代理,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://1.0.0.1,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/OpenAI_01.png
+Telegram = select,选择代理,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://www.gstatic.com/generate_204,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+AI分流 = select,全球节点,url = http://1.0.0.1,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/OpenAI_01.png
 TikTok = select,选择代理,香港优选,台湾优选,日本优选,韩国优选,狮城优选,美国优选,url = http://www.gstatic.com/generate_204,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
 # --------------------------------
 # 兜底策略故障转移
@@ -67,7 +63,9 @@ TikTok = select,选择代理,香港优选,台湾优选,日本优选,韩国优选
 # 手动策略组
 
 [Rule]
-DOMAIN,fileball.app,DIRECT
+DOMAIN-SUFFIX,amemv.com,IP位置
+DOMAIN-SUFFIX,zijieapi.com,IP位置
+GEOIP,cn,DIRECT
 DOMAIN-SUFFIX,1rtb.net,REJECT
 DOMAIN,api.revenuecat.com,DIRECT
 DOMAIN-SUFFIX,1rtb.net,REJECT
@@ -88,20 +86,16 @@ DOMAIN,wxsnsdy.wxs.qq.com,DIRECT
 FINAL,选择代理
 
 [Remote Rule]
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/ApplePushNotificationService.list?ref_type=heads, policy=DIRECT, tag=Apns, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Filen.list, policy=DIRECT, tag=Filen.list, enabled=true
 https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, policy=DIRECT, tag=Unbreak, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=DIRECT, tag=Apple, enabled=true
-http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list/_end_/MyBlockAds.list?type=rule-set&target=loon-rule-set&del=true, policy=REJECT, tag=MyBlockAds.list, enabled=true
-https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.list, policy=REJECT, tag=AWAvenue-Ads-Rule-Surge.list, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list/_end_/MyBlockAds.list?type=rule-set&target=loon-rule-set&del=true, policy=REJECT-NO-DROP, tag=MyBlockAds.list, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/PornAds.list/_end_/PornAds.list?type=rule-set&target=loon-rule-set&del=true, policy=REJECT, tag=PornAds.list, enabled=true
 https://gist.githubusercontent.com/daipengu/834a76694d47f5ec5cb18b1ec9861d73/raw/IP, policy=IP位置, tag=IP位置, enabled=true
-http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/TelegramDC.list/_end_/TelegramDC.list.txt?type=rule-set&target=loon-rule-set&del=true, policy=Telegram, tag=Telegram, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=Telegram, tag=Telegram, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/AI.list, policy=AI分流, tag=AI, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=选择代理, tag=ProxyLite, enabled=false
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=Lan, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=ChinaDomain.list, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/CN_REGION, policy=DIRECT, tag=CN, enabled=true
 
 [Host]
 
@@ -111,28 +105,28 @@ https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/CN_REGION, poli
 
 [Plugin]
 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/HTTPDNS.Block.plugin, enabled=true
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Tieba_remove_ads.plugin, enabled=false
+https://whatshub.top/plugin/SpotifyPremium.plugin, enabled=true
 https://gist.githubusercontent.com/daipengu/94790503cd1d05685df3026060ba82fe/raw/dnsloon, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/tlp.js/_end_/tlp.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=塔罗牌, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weixin_external_links_unlock.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BaiduSearchWebpage_remove_ads.plugin, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/MyBlockAds.conf/_end_/MyBlockAds.plugin?type=qx-rewrite&target=loon-plugin&del=true, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/NeteaseCloudMusic_remove_ads.plugin, enabled=true
+http://script.hub/file/_start_/https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/NeteaseAds.conf/_end_/NeteaseAds.plugin?n=%E7%BD%91%E6%98%93%E4%BA%91%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=loon-plugin&del=true, enabled=true
 http://script.hub/file/_start_/https://gist.githubusercontent.com/daipengu/e39df01f452f0aac408633f6f6d1150f/raw/wyy/_end_/wyy.plugin?type=surge-module&target=loon-plugin&del=true, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weibo_remove_ads.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Zhihu_remove_ads.plugin, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/RedPaper_remove_ads.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_remove_ads.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_remove_ads.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Amap_remove_ads.plugin, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/smzdm_remove_ads.plugin, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BingAI.plugin, policy=选择代理, enabled=false
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QuickSearch.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QuickSearch.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/QQ_Redirect.plugin, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TikTok_redirect.plugin, policy=选择代理, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Node_detection_tool.plugin, enabled=true
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TestFlight.plugin, policy=DIRECT, enabled=false
-https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_lyrics_translation.plugin, enabled=false
+https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Spotify_lyrics_translation.plugin, enabled=true
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Google.plugin, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/BoxJs.plugin, policy=选择代理, enabled=false
 https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Sub-Store.plugin, policy=选择代理, enabled=true
