@@ -1,78 +1,65 @@
 [General]
 # 日志级别
 loglevel = notify
-# 测试超时（秒）
-test-timeout = 3
-# Internet 测试 URL
-internet-test-url = http://wifi.vivo.com.cn/generate_204
+# 节点超时
+test-timeout = 5
+# 直连测试 URL
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
 # 代理测速 URL
-proxy-test-url = http://1.1.1.1/generate_204
-# GeoIP数据库
-geoip-maxmind-url = https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb
-# 游戏优化:开启后优先处理 UDP 数据，会增加系统负载
-udp-priority = true
-# UDP回退行为
+proxy-test-url = http://connectivitycheck.gstatic.com/generate_204
+# 游戏优化: 开启后优先处理 UDP 数据，会增加系统负载
+udp-priority = false
+# UDP 回退行为
 udp-policy-not-supported-behaviour = REJECT
 # DNS 服务器
 dns-server = 119.29.29.29
-# 加密DNS
-hijack-dns = *:53
-# DNS劫持
-always-real-ip = *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com*.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
-# Always Real IP Hosts
-always-raw-tcp-hosts = 5.28.19*
-# 强行关闭对特定主机名的主动协议探测
-show-error-page-for-reject = true
-# 展示错误页面
-exclude-simple-hostnames = true
-# 排除简单主机名
-# tun-excluded-routes = 239.255.255.250/32
-# VIF Excluded Routes
-allow-wifi-access = false
-all-hybrid = false
+# IPv6 DNS 查询
 ipv6 = false
+# IPv6 VIF 模式
 ipv6-vif = disabled
-use-local-host-item-for-proxy = false
+# DNS 劫持
+hijack-dns = *:53
+# Always Real IP Hosts
+always-real-ip = <simple-hostname>, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.logon.battlenet.com.cn, *.logon.battle.net, stun.l.google.com, easy-login.10099.com.cn,*-update.xoyocdn.com, *.prod.cloud.netflix.com, appboot.netflix.com, *-appboot.netflix.com
+# 展示错误页面
+show-error-page-for-reject = true
+# 排除简单主机名
+exclude-simple-hostnames = true
+# 不进行协议嗅探
+always-raw-tcp-hosts = 149.154.*, 91.108.*
+# 自定义 GeoIP 数据库
+geoip-maxmind-url = https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
 
 [Proxy Group]
-节点订阅 = select, no-alert=0, hidden=0, include-all-proxies=0, policy-path=https://sub.store/download/degyax, update-interval=0, include-other-group=
-OpenAI = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅
-Telegram = smart, no-alert=0, hidden=0, include-all-proxies=0, persistent=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
-Emby = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, DIRECT, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅
-Spotify = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0
-香港节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
-美国节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600, tolerance=50, persistent=0
-狮城节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
-日本节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600, persistent=0
-台湾节点 = smart, update-interval=0, policy-regex-filter=^(?=.*((?i)|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|(\b(GAME)\b))).*$, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, interval=600
-自动选择 = smart, no-alert=1, hidden=1, include-all-proxies=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*((?i)(\b()\b)))(?!.*((?i)回国|2X|3X|5X|10X|30X|校园|流量|官网|官址|失联|到期|剩余|套餐|游戏|(\b(GAME)\b))).*$
-手动选择 = select, 自动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, policy-regex-filter=^(?=.*((?i)(\b()\b)))(?!.*((?i)回国|2X|3X|5X|10X|30X|校园|流量|官网|官址|失联|到期|剩余|套餐|游戏|(\b(GAME)\b))).*$
+AI = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=手动选择
+Telegram = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=手动选择
+Emby = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, DIRECT, include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+Spotify = select, 手动选择, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=手动选择
+香港节点 = smart, policy-regex-filter=(?i)🇭🇰|香港|(\b(HK|Hong)\b), include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, no-alert=0, hidden=1, include-all-proxies=0
+美国节点 = smart, policy-regex-filter=(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b), include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png, no-alert=0, hidden=1, include-all-proxies=0
+狮城节点 = smart, policy-regex-filter=(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b), include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png, no-alert=0, hidden=1, include-all-proxies=0
+日本节点 = smart, policy-regex-filter=(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b), include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, no-alert=0, hidden=1, include-all-proxies=0
+台湾节点 = smart, policy-regex-filter=(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b), include-other-group=手动选择, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png, no-alert=0, hidden=1, include-all-proxies=0
+IP位置 = select, 手动选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=手动选择
+手动选择 = select, 西部数据, CTC, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Irrucky/Tool/main/Surge/icon/surge_3.png, update-interval=10800, no-alert=0, hidden=0, include-other-group="西部数据, CTC"
+西部数据 = select, policy-path=https://api.wd-purple.com/sub?target=surge&ver=4&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fwd-purple.com%2Fsubscribe%2Feyqrrg-lqaaet9b, update-interval=10800, no-alert=0, hidden=0, include-all-proxies=0
+CTC = select, policy-path=https://38.47.221.60:10000/api/v1/client/subscribe?token=f93cbfcffc6675100746a2d31cc6242d, update-interval=10800, no-alert=0, hidden=0, include-all-proxies=0
 
 [Rule]
-DOMAIN,sdk.1rtb.net,REJECT
-RULE-SET,http://script.hub/file/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list/_end_/MyBlockAds.list?type=rule-set&target=surge-rule-set&del=true,REJECT
-RULE-SET,https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list,REJECT
-RULE-SET,https://gist.githubusercontent.com/daipengu/89c812fbb34be7d47a68c82d586016c5/raw/top500,DIRECT
-RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/APNs.list,DIRECT
-RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Apple.list,DIRECT
-RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Direct.list,DIRECT
-RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/OpenAI.list,OpenAI
+IP-CIDR,180.76.76.112/32,DIRECT // Added for: 180.76.76.112:443
+RULE-SET,https://gist.githubusercontent.com/daipengu/834a76694d47f5ec5cb18b1ec9861d73/raw/IP,IP位置
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/AI.list,AI
 RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Telegram.list,Telegram
 RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Emby.list,Emby
 RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Spotify.list,Spotify
-RULE-SET,https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/tld-not-cn.txt,手动选择
-RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list,手动选择
-DOMAIN-SUFFIX,cn,DIRECT
-IP-CIDR,0.0.0.0/32,REJECT,no-resolve
+RULE-SET,https://github.com/Repcz/Tool/raw/X/Surge/Rules/Apple.list,DIRECT
 RULE-SET,LAN,DIRECT
-GEOIP,CN,DIRECT,no-resolve
-FINAL,DIRECT
-
-[Host]
-*.cn = server:syslib
+GEOIP,CN,DIRECT
+FINAL,手动选择
 
 [MITM]
 # MITM over HTTP/2
 h2 = true
-ca-passphrase = 326B98BE
-ca-p12 = 
+hostname = 180.76.76.112
+ca-passphrase = 7EC57453
+ca-p12 = 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
