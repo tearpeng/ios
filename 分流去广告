@@ -2,6 +2,8 @@
 #!desc=Description Here
 #小蚕惠生活
 DOMAIN,sdk.1rtb.net,REJECT
+#头条sdk
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
 # 阿里巴巴
 DOMAIN-SUFFIX,ut.taobao.com,REJECT
 DOMAIN,ems.youku.com,REJECT
