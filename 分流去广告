@@ -88,8 +88,6 @@ DOMAIN,mercury-gateway.ixiaochuan.cn,REJECT
 DOMAIN,mon.toutiaocloud.com,REJECT
 DOMAIN,open.e.kuaishou.com,REJECT
 DOMAIN,open.kuaishou.com,REJECT
-DOMAIN,pagead2.googlesyndication-cn.com,REJECT
-DOMAIN,pagead2.googlesyndication.com,REJECT
 DOMAIN,sdk.e.qq.com,REJECT
 DOMAIN,tangram.e.qq.com,REJECT
 DOMAIN,ws.tapjoyads.com,REJECT
