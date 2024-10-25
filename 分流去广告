@@ -1,8 +1,5 @@
 #!name=分流去广告
 #!desc=Description Here
-
-# 12306
-DOMAIN,ad.12306.cn,DIRECT
 #小蚕惠生活
 DOMAIN,sdk.1rtb.net,REJECT
 # 阿里巴巴
