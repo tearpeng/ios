@@ -1,6 +1,8 @@
 #!name=分流去广告
 #!desc=Description Here
-#小蚕惠生活
+# 中国联通
+DOMAIN-SUFFIX,ad.10010.com,REJECT
+# 小蚕惠生活
 DOMAIN,sdk.1rtb.net,REJECT
 # 阿里巴巴
 DOMAIN-SUFFIX, ut.taobao.com, REJECT
