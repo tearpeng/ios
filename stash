@@ -1,0 +1,243 @@
+proxy-providers:
+  节点订阅:
+    url: '#http://sub.store/download/fqy'
+    interval: 3000
+    # 服务提供商-2:
+    #   url: http://your-another-service-provider
+    #   interval: 600
+  节点订阅 2:
+    interval: 3000
+    url: "https://push.wc-gateway.com/api/v1/client/subscribe?token=6c4b1155a188a256600cee7107acd095"
+proxy-groups:
+  - name: Auto
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+  # 基于地区分组
+  - name: HK
+    filter: "澳门|🇲🇴|港|🇭🇰|HK|(?i)Hong"
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hong_Kong.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: TW
+    filter: "台|🇹🇼|湾|TW|(?i)Taiwan"
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Taiwan.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: 'SG '
+    filter: "新加坡|坡|狮城|🇸🇬|SG|(?i)Singapore"
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Singapore.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: 'JP '
+    filter: "日|🇯🇵|东京|JP|(?i)Japan"
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Japan.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: 'US '
+    filter: "美|🇺🇲|US|(?i)States|America"
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/United_States.png
+    interval: 120
+    lazy: true
+    tolerance: 50
+    type: url-test
+    include-all: true
+    hidden: true
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    name: Telegram
+    type: load-balance
+    filter: (香港|🇭🇰|Hong Kong|HK|台湾|🇹🇼|Taiwan|TW|日本|🇯🇵|Japan|JP|新加坡|🇸🇬|Singapore|SG|美国|🇺🇸|United States|USA|US)
+    include-all: true
+    strategy: consistent-hashing
+  - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT5.png
+    name: AI
+    proxies:
+      - Final
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+    type: select
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: Streaming
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Netflix.png
+    type: select
+    proxies:
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+      - DIRECT
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
+    name: Tiktok
+    proxies:
+      - Final
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+    type: select
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: Spotify
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png
+    type: select
+    proxies:
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+      - DIRECT
+    use:
+      - 节点订阅
+      - 节点订阅 2
+  - name: Final
+    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/stash1.png
+    type: select
+    proxies:
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+    include-all: null
+    use:
+      - 节点订阅
+      - 节点订阅 2
+rules:
+  - SCRIPT,quic,REJECT,no-track
+  - RULE-SET,AD,REJECT
+  - RULE-SET,Apple,DIRECT
+  - RULE-SET,欧意,DIRECT
+  - RULE-SET,Tiktok,Tiktok
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,Media,Streaming
+  - RULE-SET,AI,AI
+  - RULE-SET,Telegram,SG,no-resolve
+  - RULE-SET,ProxyGFWlist,Final
+  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Final
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
+dns:
+  default-nameserver:
+    - system
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+log-level: warning
+mode: rule
+rule-providers:
+  欧意:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/OKX
+  Telegram:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Telegram
+  AI:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/AI
+  Apple:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Apple
+  Spotify:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Spotify
+  Media:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Media
+  ProxyGFWlist:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyGFWlist.list
+  Tiktok:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Tiktok
+  ChinaDomain:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaDomain.list
+  网络信息直连:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/wlxx
+  LAN:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/LocalAreaNetwork.list
+  AD:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/分流去广告
