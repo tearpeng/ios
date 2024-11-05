@@ -1,13 +1,14 @@
+#SUBSCRIBED https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/stash
 proxy-providers:
   节点订阅:
-    url: '#http://sub.store/download/fqy'
+    url: 'https://api.0be.xyz/api/userhome/rssusernodeext?subkey=b69c454013bb40fb9da1e7fc5649bb4b'
     interval: 3000
     # 服务提供商-2:
     #   url: http://your-another-service-provider
     #   interval: 600
   节点订阅 2:
     interval: 3000
-    url: "https://push.wc-gateway.com/api/v1/client/subscribe?token=6c4b1155a188a256600cee7107acd095"
+    url: "http://sub.store/download/kc"
 proxy-groups:
   - name: Auto
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
@@ -80,10 +81,21 @@ proxy-groups:
       - 节点订阅 2
   - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
     name: Telegram
-    type: load-balance
-    filter: (香港|🇭🇰|Hong Kong|HK|台湾|🇹🇼|Taiwan|TW|日本|🇯🇵|Japan|JP|新加坡|🇸🇬|Singapore|SG|美国|🇺🇸|United States|USA|US)
-    include-all: true
+    type: select
+    filter: null
+    include-all: null
     strategy: consistent-hashing
+    proxies:
+      - Final
+      - Auto
+      - HK
+      - TW
+      - 'SG '
+      - 'JP '
+      - 'US '
+    use:
+      - 节点订阅
+      - 节点订阅 2
   - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT5.png
     name: AI
     proxies:
@@ -102,13 +114,13 @@ proxy-groups:
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Netflix.png
     type: select
     proxies:
+      - Final
       - Auto
       - HK
       - TW
       - 'SG '
       - 'JP '
       - 'US '
-      - DIRECT
     use:
       - 节点订阅
       - 节点订阅 2
@@ -130,13 +142,13 @@ proxy-groups:
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png
     type: select
     proxies:
+      - Final
       - Auto
       - HK
       - TW
       - 'SG '
       - 'JP '
       - 'US '
-      - DIRECT
     use:
       - 节点订阅
       - 节点订阅 2
