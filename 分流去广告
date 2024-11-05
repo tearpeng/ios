@@ -75,7 +75,6 @@ DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
 DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
 DOMAIN-SUFFIX, ads.linkedin.com, REJECT
 DOMAIN-SUFFIX, ads.vungle.com, REJECT
-DOMAIN-SUFFIX, adservice.google.com, REJECT
 DOMAIN-SUFFIX, adukwai.com, REJECT
 DOMAIN-SUFFIX, applovin.com, REJECT
 DOMAIN-SUFFIX, applvn.com, REJECT
