@@ -35,10 +35,6 @@ DOMAIN, afd.baidu.com, REJECT
 DOMAIN, afdconf.baidu.com, REJECT
 DOMAIN, lc.map.baidu.com, REJECT
 
-# 百度
-IP-CIDR, 180.76.76.112/32, REJECT, no-resolve
-IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
-
 # ======= C ======= #
 # 昌原云充
 DOMAIN, m.adyounger.com, REJECT
@@ -51,9 +47,6 @@ DOMAIN, images.ctfassets.net, REJECT
 DOMAIN, mapi.apptimize.com, REJECT
 DOMAIN, md-i-s.apptimize.com, REJECT
 
-# ======= D ======= #
-# DNS 无响应
-DOMAIN, adttrackingprd.hwwt8.com, REJECT
 
 # ======= F ======= #
 # 放松双眼
@@ -65,7 +58,6 @@ DOMAIN-SUFFIX, mall.icbc.com.cn, REJECT
 DOMAIN, pageviewp.icbc.com.cn, REJECT
 
 # 广告联盟
-AND, ((OR,((DOMAIN-SUFFIX, amemv.com), (DOMAIN-SUFFIX, zijieapi.com))), (DOMAIN-KEYWORD,-misc-)), REJECT
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
 DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
 DOMAIN-KEYWORD, asiad.byteactivity, REJECT
@@ -110,10 +102,6 @@ DOMAIN-SUFFIX, ehaier.com, REJECT
 # 盒马
 AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Hema4iPhone*)), REJECT
 
-# httpdns
-DOMAIN-KEYWORD, httpdns., REJECT
-DOMAIN-KEYWORD, httpdns-, REJECT
-DOMAIN, hdns.ksyun.com, REJECT
 
 # ======= J ======= #
 # 建设银行
