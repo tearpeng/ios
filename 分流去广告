@@ -59,7 +59,6 @@ DOMAIN, pageviewp.icbc.com.cn, REJECT
 
 # 广告联盟
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
-DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
 DOMAIN-KEYWORD, asiad.byteactivity, REJECT
 DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
 DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
