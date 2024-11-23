@@ -46,6 +46,7 @@ DOMAIN,msg.umengcloud.com,REJECT
 DOMAIN,sec.umeng.com,REJECT
 DOMAIN,ulogs.umeng.com,REJECT
 DOMAIN,ynuf.aliapp.org,REJECT
+DOMAIN,api.zuihuimai.com,REJECT
 # 广告联盟
 DOMAIN-KEYWORD,-ad-sign.byteimg.com,REJECT
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT
@@ -136,8 +137,6 @@ DOMAIN,sin3-ib.adnxs.com,REJECT
 # 其他
 DOMAIN,affcpatrk.com,REJECT
 # ======= S ======= #
-# 什么值得买
-DOMAIN,api.zuihuimai.com,REJECT
 # 数字联盟
 DOMAIN-SUFFIX,shuzilm.cn,REJECT
 # Speedtest
@@ -175,7 +174,6 @@ DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
 #DOMAIN, hub5emu.v6.shub.sandai.net, REJECT
 #DOMAIN, hub5idx.v6.shub.sandai.net, REJECT
 # ======= Y ======= #
-# 移花宫
 # 云闪付 开屏广告
 DOMAIN,ads.95516.com,REJECT
 DOMAIN,switch.cup.com.cn,REJECT
