@@ -1,5 +1,6 @@
 #TG转圈
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP
+
 # 中国联通
 DOMAIN-SUFFIX,ad.10010.com,REJECT
 # 小蚕惠生活
@@ -147,9 +148,9 @@ DOMAIN,id.hadron.ad.gt,REJECT
 # 太平洋保险
 DOMAIN,a.cpic.com.cn,REJECT
 # 腾讯
+DOMAIN-KEYWORD,gdt.qq.com,REJECT
 DOMAIN-KEYWORD,trace.qq.com,REJECT
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
 DOMAIN-SUFFIX,l.qq.com,REJECT
 DOMAIN,adsmind.gdtimg.com,REJECT
 DOMAIN,info4.video.qq.com,REJECT
