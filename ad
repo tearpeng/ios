@@ -144,21 +144,6 @@ DOMAIN,id.hadron.ad.gt,REJECT
 # ======= T ======= #
 # 太平洋保险
 DOMAIN,a.cpic.com.cn,REJECT
-# 腾讯
-DOMAIN-KEYWORD,trace.qq.com,REJECT
-DOMAIN-KEYWORD,trace.video.qq.com,REJECT
-DOMAIN,adsmind.gdtimg.com,REJECT
-DOMAIN,info4.video.qq.com,REJECT
-DOMAIN,info6.video.qq.com,REJECT
-DOMAIN,ios.video.mpush.qq.com,REJECT
-DOMAIN,otheve.beacon.qq.com,REJECT
-DOMAIN,pgdt.gtimg.cn,REJECT
-DOMAIN,pgdt.ugdtimg.com,REJECT
-DOMAIN,tmead.y.qq.com,REJECT
-DOMAIN,tmeadbak.y.qq.com,REJECT
-DOMAIN,tmeadcomm.y.qq.com,REJECT
-DOMAIN,tpns.qq.com,REJECT
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 # ======= W ======= #
 # 微信
 DOMAIN,badjs.weixinbridge.com,REJECT
