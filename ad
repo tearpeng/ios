@@ -145,7 +145,6 @@ DOMAIN,id.hadron.ad.gt,REJECT
 # 太平洋保险
 DOMAIN,a.cpic.com.cn,REJECT
 # 腾讯
-DOMAIN-KEYWORD,gdt.qq.com,REJECT
 DOMAIN-KEYWORD,trace.qq.com,REJECT
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT
 DOMAIN,adsmind.gdtimg.com,REJECT
