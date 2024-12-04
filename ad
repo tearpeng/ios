@@ -62,7 +62,6 @@ DOMAIN-SUFFIX,miaozhen.com,REJECT
 DOMAIN-SUFFIX,ubixioe.com,REJECT
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
 DOMAIN-SUFFIX,v.smtcdns.com,REJECT
-DOMAIN,ad.zijieapi.com,REJECT
 DOMAIN,adapi.izuiyou.com,REJECT
 DOMAIN,adtracker.adfunlink.com,REJECT
 DOMAIN,dsp-x.jd.com,REJECT
