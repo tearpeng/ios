@@ -1,0 +1,173 @@
+ipv6: true
+vif_only: false
+hijack_dns:
+- '*53'
+proxy_latency_test_url: http://www.gstatic.com/generate_204
+direct_latency_test_url: http://connectivitycheck.platform.hicloud.com/generate_204
+dns:
+  upstreams:
+    公共:
+    - 119.29.29.29
+    - 223.5.5.5
+  forward:
+  - wildcard:
+      match: '*'
+      value: 公共
+policy_groups:
+- auto_test:
+    name: HK
+    policies:
+    - 节点订阅
+    flatten: true
+    filter: (?i)🇭🇰|香港|(\b(HK|Hong)\b)
+    tolerance: 0
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    hidden: true
+- auto_test:
+    name: TW
+    policies:
+    - 节点订阅
+    flatten: true
+    filter: (?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)
+    tolerance: 0
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+    hidden: true
+- auto_test:
+    name: SG
+    policies:
+    - 节点订阅
+    flatten: true
+    filter: (?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)
+    tolerance: 0
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    hidden: true
+- auto_test:
+    name: JP
+    policies:
+    - 节点订阅
+    flatten: true
+    filter: (?i)🇯🇵|日本|东京|(\b(JP|Japan)\b)
+    tolerance: 0
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    hidden: true
+- auto_test:
+    name: US
+    policies:
+    - 节点订阅
+    flatten: true
+    filter: (?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)
+    tolerance: 0
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    hidden: true
+- select:
+    name: 自动
+    policies:
+    - HK
+    - TW
+    - SG
+    - JP
+    hidden: true
+- select:
+    name: IP
+    policies:
+    - DIRECT
+    - 节点订阅 2
+    flatten: true
+    icon: ''
+- select:
+    name: AI
+    policies:
+    - 自动
+    - 节点订阅 2
+    - HK
+    flatten: true
+    icon: ''
+- select:
+    name: Emby
+    policies:
+    - DIRECT
+    - 节点订阅
+    flatten: true
+    icon: ''
+- select:
+    name: TikTok
+    policies:
+    - Final
+    - TW
+    - SG
+    - JP
+    - US
+    icon: ''
+- select:
+    name: Telegram
+    policies:
+    - Final
+    - HK
+    - TW
+    - SG
+    - JP
+    - US
+    flatten: false
+    icon: ''
+- select:
+    name: Final
+    policies:
+    - 自动
+    - 节点订阅
+    flatten: true
+    icon: ''
+    hidden: false
+- external:
+    name: 节点订阅
+    type: select
+    urls:
+    - https://api-linkcube.com/subscribe/mpzab-ol3f4emf
+    hidden: true
+- external:
+    name: 节点订阅 2
+    type: select
+    urls:
+    - https://api.0be.xyz/api/userhome/rssusernodeext?subkey=3d993482-5a90-4fab-b8d2-a319f2b6be78&usenodetype=6
+    hidden: true
+rules:
+- rule_set:
+    match: https://surge.short.gy/ad
+    policy: REJECT
+- rule_set:
+    match: https://surge.short.gy/ip
+    policy: IP
+- rule_set:
+    match: https://surge.short.gy/tg
+    policy: Telegram
+- rule_set:
+    match: https://surge.short.gy/ai
+    policy: AI
+    disabled: false
+- rule_set:
+    match: https://surge.short.gy/apple
+    policy: DIRECT
+- rule_set:
+    match: https://surge.short.gy/tiktok
+    policy: TikTok
+- rule_set:
+    match: https://surge.short.gy/proxy
+    policy: Final
+- rule_set:
+    match: https://surge.short.gy/lan
+    policy: DIRECT
+- rule_set:
+    match: https://surge.short.gy/cndomain
+    policy: DIRECT
+- geoip:
+    match: CN
+    policy: DIRECT
+- default:
+    policy: Final
+mitm:
+  enabled: true
+  ca_p12: egern.p12
+  ca_passphrase: egern
+modules:
+- name: 开屏
+  url: https://github.com/ddgksf2013/Modules/raw/main/StartUpAds.sgmodule
+  enabled: true
