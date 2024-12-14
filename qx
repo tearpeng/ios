@@ -14,7 +14,7 @@ server_check_url = http://www.gstatic.com/generate_204
 # 网络连通性测试链接
 network_check_url = http://connectivitycheck.platform.hicloud.com/generate_204
 # 测试超时时间 (毫秒)
-server_check_timeout = 3000
+server_check_timeout = 5000
 # 关联配置图标
 profile_img_url = https://avatars.githubusercontent.com/repcz
 # 节点页面的节点信息展示，可完整自定义展示内容与方式
@@ -33,7 +33,7 @@ fallback_udp_policy = reject
 
 [dns]
 # 禁用 IPv6 查询
-no-ipv6
+#no-ipv6
 
 # 设置使用 阿里DNS服务器
 server = 223.5.5.5
@@ -42,14 +42,16 @@ server = 223.5.5.5
 circumvent-ipv4-answer =0.0.0.0,106.74.25.198, 182.43.124.6, 218.201.25.129, 111.7.202.147
 
 [policy]
-static=Final, HK, SG, JP, TW, US, proxy,direct, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_4.png
-static=TikTok, Final, HK, SG, JP, TW, US, proxy, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
+static=Final, proxy, HK, SG, JP, TW, US, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_4.png
+static=TikTok, Final,TW, SG, JP, US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
 static=Spotify, Final, HK, SG, JP, TW, US, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-static=IM, Final, HK, SG, JP, TW, US, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-static=AI, Final, HK, SG, JP, TW, US, proxy, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT(1).png
+static=Emby, resource-tag-regex=ykk, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/emby.png
+static=Streaming, Final, HK, SG, JP, TW, US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Netflix.png
+static=AI, Final, TW,SG, JP,  US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT(1).png
+static=IP, , resource-tag-regex=KC, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ip.png
+url-latency-benchmark=HK, server-tag-regex=(?i)🇭🇰|香港|(\b(HK|Hong)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 
 # 节点延迟基准测试（按英文缩写和距离排序）
-url-latency-benchmark=HK, server-tag-regex=(?i)🇭🇰|香港|(\b(HK|Hong)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 url-latency-benchmark=SG, server-tag-regex=(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 url-latency-benchmark=JP, server-tag-regex=(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 url-latency-benchmark=TW, server-tag-regex=(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Taiwan|Tai)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
@@ -58,24 +60,31 @@ url-latency-benchmark=US, server-tag-regex=(?i)🇺🇸|美国|洛杉矶|圣何�
 
 
 [server_remote]
-https://proxyinfo.net/api/v1/client/subscribe?token=61736341e40f0aaea6ebd9517ef29c23, tag=Tag-1732664172, update-interval=172800, opt-parser=false, enabled=true
+https://api.linkcube.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fapi-linkcube.com%2Fsubscribe%2Fmpzab-ol3f4emf, tag=linkcube, update-interval=172800, opt-parser=true, enabled=true
+https://proxyinfo.net/api/v1/client/subscribe?token=64c06466cebc001af976cca89463f27b, tag=Tag-1733737488, update-interval=172800, opt-parser=true, enabled=false
+https://kaimenlai.com/subscription/shadowrocket/00142489-7692-4f85-ad8e-5e7cc5ce087c, tag=Tag-1733727110, update-interval=172800, opt-parser=true, enabled=false
+https://subscription.und32w4732.top/686d3eba-dded-44e1-a8dd-8eb2b11cb49c/ss, tag=深水, update-interval=172800, opt-parser=true, enabled=false
+https://api.0be.xyz/api/userhome/rssusernodeext?subkey=3d993482-5a90-4fab-b8d2-a319f2b6be78&usenodetype=6, tag=KC, update-interval=172800, opt-parser=true, enabled=true
+https://cloud.ykkk.tech/api/v1/client/subscribe?token=be49979f588d10cbfd5eced075d313ee, tag=ykk, update-interval=172800, opt-parser=true, enabled=true
+https://proxyinfo.net/api/v1/client/subscribe?token=61736341e40f0aaea6ebd9517ef29c23, tag=Tag-1732664172, update-interval=172800, opt-parser=false, enabled=false
 https://nn8qozmu.nn8qozmu.top/api/v1/client/subscribe?token=0e753aefbdaa85bafc811d9e9de3524e, tag=leiting, update-interval=172800, opt-parser=false, enabled=true
 
 
 [filter_remote]
-https://surge.short.gy/ad, tag=AD, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/ad, tag=ad, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/ai, tag=AI, force-policy=AI, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/tiktok, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/IM, tag=IM, force-policy=IM, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/tld-not-cn, tag=tld-not-cn, force-policy=Final, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/proxy, tag=proxy, force-policy=Final, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/IM, tag=Streaming, force-policy=Streaming, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/talkatone, tag=Talkatone, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/wechat, tag=WeChat, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/apple, tag=Apple, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/talkatone, tag=talkatone, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 https://surge.short.gy/lan, tag=LAN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/cn, tag=CN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/asn, tag=CN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 [filter_local]
+host-suffix, xmsl.org, Emby
 
 final, Final
 
@@ -83,6 +92,7 @@ final, Final
 
 
 [rewrite_remote]
+https://raw.githubusercontent.com/ddgksf2013/Modules/main/Adblock.sgmodule, tag=去广告, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/QX.snippet, tag=Sub-Store, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=BoxJS@chavyleung, update-interval=172800, opt-parser=false, enabled=true
 
@@ -98,3 +108,5 @@ event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/
 
 
 [mitm]
+passphrase = 6D031799
+p12 = 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
