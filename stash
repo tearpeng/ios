@@ -1,23 +1,19 @@
 #SUBSCRIBED https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/stash
+#SUBSCRIBED https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/stash
 proxy-providers:
   节点订阅:
-    url: 'https://api.0be.xyz/api/userhome/rssusernodeext?subkey=b69c454013bb40fb9da1e7fc5649bb4b'
+    url: 'https://proxyinfo.net/api/v1/client/subscribe?token=554b10d50d85ac82eed554c69e09241b&flag=clash'
     interval: 3000
     # 服务提供商-2:
     #   url: http://your-another-service-provider
     #   interval: 600
+
+    benchmark-timeout: 5
+    benchmark-url: http://www.gstatic.com/generate_204
   节点订阅 2:
     interval: 3000
     url: "http://sub.store/download/kc"
 proxy-groups:
-  - name: Auto
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Auto.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
   # 基于地区分组
   - name: HK
     filter: "澳门|🇲🇴|港|🇭🇰|HK|(?i)Hong"
@@ -79,48 +75,15 @@ proxy-groups:
     use:
       - 节点订阅
       - 节点订阅 2
-  - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-    name: Telegram
-    type: select
-    filter: null
-    include-all: null
-    strategy: consistent-hashing
-    proxies:
-      - Final
-      - Auto
-      - HK
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
-    use:
-      - 节点订阅
-      - 节点订阅 2
   - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT5.png
     name: AI
     proxies:
       - Final
-      - Auto
-      - HK
       - TW
       - 'SG '
       - 'JP '
       - 'US '
     type: select
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: Streaming
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Netflix.png
-    type: select
-    proxies:
-      - Final
-      - Auto
-      - HK
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
     use:
       - 节点订阅
       - 节点订阅 2
@@ -128,8 +91,6 @@ proxy-groups:
     name: Tiktok
     proxies:
       - Final
-      - Auto
-      - HK
       - TW
       - 'SG '
       - 'JP '
@@ -143,7 +104,6 @@ proxy-groups:
     type: select
     proxies:
       - Final
-      - Auto
       - HK
       - TW
       - 'SG '
@@ -156,7 +116,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/stash1.png
     type: select
     proxies:
-      - Auto
       - HK
       - TW
       - 'SG '
@@ -167,17 +126,12 @@ proxy-groups:
       - 节点订阅
       - 节点订阅 2
 rules:
-  - SCRIPT,quic,REJECT,no-track
-  - RULE-SET,AD,REJECT
   - RULE-SET,Apple,DIRECT
   - RULE-SET,欧意,DIRECT
   - RULE-SET,Tiktok,Tiktok
   - RULE-SET,Spotify,Spotify
-  - RULE-SET,Media,Streaming
   - RULE-SET,AI,AI
-  - RULE-SET,Telegram,SG,no-resolve
-  - RULE-SET,ProxyGFWlist,Final
-  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,dnsp,Final
   - RULE-SET,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,Final
@@ -189,7 +143,6 @@ dns:
     - system
   nameserver:
     - 223.5.5.5
-    - 119.29.29.29
 log-level: warning
 mode: rule
 rule-providers:
@@ -253,3 +206,8 @@ rule-providers:
     format: text
     interval: 86400
     url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/分流去广告
+  dnsp:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://surge.short.gy/dnsp
