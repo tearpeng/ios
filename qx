@@ -1,13 +1,3 @@
-# 基于[＠KOP-XIAO](https://github.com/KOP-XIAO/QuantumultX/blob/master/QuantumultX_Profiles.conf)修改
-# Author:https://github.com/Repcz
-# TG:https://t.me/QVQ_Channel
-#
-# 以 ';' 或 '#' 或 '//' 开头的配置文件行为注释行
-#
-# 最后更新时间: 2024-10-26 23:00
-#
-# ================
-
 [general]
 # 节点延迟测试链接
 server_check_url = http://www.gstatic.com/generate_204
@@ -42,37 +32,28 @@ server = 223.5.5.5
 circumvent-ipv4-answer =0.0.0.0,106.74.25.198, 182.43.124.6, 218.201.25.129, 111.7.202.147
 
 [policy]
-static=Final, proxy, HK, SG, JP, TW, US, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_4.png
-static=TikTok, Final,TW, SG, JP, US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
-static=Spotify, Final, HK, SG, JP, TW, US, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-static=Emby, resource-tag-regex=ykk, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/emby.png
-static=Streaming, Final, HK, SG, JP, TW, US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$,img-url=https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Netflix.png
-static=AI, Final, TW,SG, JP,  US, proxy, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT(1).png
-static=IP, , resource-tag-regex=KC, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ip.png
-url-latency-benchmark=HK, server-tag-regex=(?i)🇭🇰|香港|(\b(HK|Hong)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+static=Final, proxy,HK ,TW,SG,JP,US,img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/Quantumult_X_4.png
+static=AI, TW, SG, JP, US, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|HK|HONGKONG)\b|(\d{4}-\d{2}-\d{2}|\dG|香港|国旗|节点)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT6.png
+static=TikTok, TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|HK|HONGKONG)\b|(\d{4}-\d{2}-\d{2}|\dG|香港|国旗|节点)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
+static=Streaming,Final,HK ,TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|HK|HONGKONG)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/netflix.png
+static=Emby, Final,HK ,TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/emby.png
+available=HK, server-tag-regex=(?i)(港|HK|Hong), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+available=TW, server-tag-regex=(?i)(台|TW|Tai), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+available=SG, server-tag-regex=(?i)(新加坡|坡|狮城|SG|Singapore), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+available=JP, server-tag-regex=(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+available=US, server-tag-regex=(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 
 # 节点延迟基准测试（按英文缩写和距离排序）
-url-latency-benchmark=SG, server-tag-regex=(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-url-latency-benchmark=JP, server-tag-regex=(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-url-latency-benchmark=TW, server-tag-regex=(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Taiwan|Tai)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
-url-latency-benchmark=US, server-tag-regex=(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b), check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 [server_local]
 
 
 [server_remote]
-https://api.linkcube.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fapi-linkcube.com%2Fsubscribe%2Fmpzab-ol3f4emf, tag=linkcube, update-interval=172800, opt-parser=true, enabled=true
-https://proxyinfo.net/api/v1/client/subscribe?token=64c06466cebc001af976cca89463f27b, tag=Tag-1733737488, update-interval=172800, opt-parser=true, enabled=false
-https://kaimenlai.com/subscription/shadowrocket/00142489-7692-4f85-ad8e-5e7cc5ce087c, tag=Tag-1733727110, update-interval=172800, opt-parser=true, enabled=false
-https://subscription.und32w4732.top/686d3eba-dded-44e1-a8dd-8eb2b11cb49c/ss, tag=深水, update-interval=172800, opt-parser=true, enabled=false
-https://api.0be.xyz/api/userhome/rssusernodeext?subkey=3d993482-5a90-4fab-b8d2-a319f2b6be78&usenodetype=6, tag=KC, update-interval=172800, opt-parser=true, enabled=true
-https://cloud.ykkk.tech/api/v1/client/subscribe?token=be49979f588d10cbfd5eced075d313ee, tag=ykk, update-interval=172800, opt-parser=true, enabled=true
-https://proxyinfo.net/api/v1/client/subscribe?token=61736341e40f0aaea6ebd9517ef29c23, tag=Tag-1732664172, update-interval=172800, opt-parser=false, enabled=false
-https://nn8qozmu.nn8qozmu.top/api/v1/client/subscribe?token=0e753aefbdaa85bafc811d9e9de3524e, tag=leiting, update-interval=172800, opt-parser=false, enabled=true
+
 
 
 [filter_remote]
 https://surge.short.gy/ad, tag=ad, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=false
 https://surge.short.gy/ai, tag=AI, force-policy=AI, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/tiktok, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/IM, tag=Streaming, force-policy=Streaming, update-interval=172800, opt-parser=true, enabled=true
@@ -92,7 +73,7 @@ final, Final
 
 
 [rewrite_remote]
-https://raw.githubusercontent.com/ddgksf2013/Modules/main/Adblock.sgmodule, tag=去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf, tag=去广告, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/QX.snippet, tag=Sub-Store, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=BoxJS@chavyleung, update-interval=172800, opt-parser=false, enabled=true
 
