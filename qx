@@ -50,7 +50,6 @@ available=US, server-tag-regex=(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|
 [server_remote]
 
 
-
 [filter_remote]
 https://surge.short.gy/ad, tag=ad, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=false
@@ -62,10 +61,10 @@ https://surge.short.gy/wechat, tag=WeChat, force-policy=direct, update-interval=
 https://surge.short.gy/apple, tag=Apple, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 https://surge.short.gy/lan, tag=LAN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/asn, tag=CN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 [filter_local]
 host-suffix, xmsl.org, Emby
+geoip,CN,DIRECT
 
 final, Final
 
