@@ -1,5 +1,5 @@
 ipv6: true
-vif_only: false
+vif_only: true
 hijack_dns:
 - '*53'
 proxy_latency_test_url: http://www.gstatic.com/generate_204
@@ -13,6 +13,7 @@ dns:
   - wildcard:
       match: '*'
       value: 公共
+  public_ip_lookup_url: ifconfig.me/ip
 policy_groups:
 - auto_test:
     name: HK
@@ -66,6 +67,7 @@ policy_groups:
     - TW
     - SG
     - JP
+    - US
     hidden: true
 - select:
     name: IP
@@ -121,7 +123,7 @@ policy_groups:
     name: 节点订阅
     type: select
     urls:
-    - https://api-linkcube.com/subscribe/mpzab-ol3f4emf
+    - https://api.xmancdn.com/osubscribe.php?sid=155769&token=C7bcRWWpOdej&sip002=1
     hidden: true
 - external:
     name: 节点订阅 2
