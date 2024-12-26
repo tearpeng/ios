@@ -48,21 +48,24 @@ available=US, server-tag-regex=(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|
 
 
 [server_remote]
+https://zlxz.80jm.com/api/v1/client/subscribe?token=543c8300256abc640a3161fca3a8e78b&flag=shadowrocket, tag=Tag-1735112386, update-interval=172800, opt-parser=true, enabled=false
+https://times1735026495.subtangniu.top:9606/v2b/mdss/api/v1/client/subscribe?token=0d0cedd272387eb27c50eceb66dd73f2, tag=梦迪, update-interval=172800, opt-parser=true, enabled=true
+https://proxyinfo.net/api/v1/client/subscribe?token=554b10d50d85ac82eed554c69e09241b, tag=性价比, update-interval=172800, opt-parser=true, enabled=false
+https://api-huacloud.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&url=https%3A%2F%2Fapi.xmancdn.com%2Fosubscribe.php%3Fsid%3D155769%26token%3DC7bcRWWpOdej%26sip002%3D1, tag=花云, update-interval=172800, opt-parser=true, enabled=true
+https://api.linkcube.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fapi-linkcube.com%2Fsubscribe%2Fmpzab-ol3f4emf, tag=绿叶, update-interval=172800, opt-parser=true, enabled=false
 
 
 [filter_remote]
 https://surge.short.gy/ad, tag=ad, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=false
 https://surge.short.gy/ai, tag=AI, force-policy=AI, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/tiktok, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/IM, tag=Streaming, force-policy=Streaming, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/strm, tag=Streaming, force-policy=Streaming, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/talkatone, tag=Talkatone, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/wechat, tag=WeChat, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://surge.short.gy/apple, tag=Apple, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
-https://surge.short.gy/lan, tag=LAN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 [filter_local]
+host-suffix, z.sfcj.org, Emby
 host-suffix, xmsl.org, Emby
 geoip,CN,DIRECT
 
