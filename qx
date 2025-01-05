@@ -1,6 +1,6 @@
 [general]
 # 节点延迟测试链接
-server_check_url = http://www.gstatic.com/generate_204
+server_check_url = http://www.apple.com/library/test/success.html
 # 网络连通性测试链接
 network_check_url = http://connectivitycheck.platform.hicloud.com/generate_204
 # 测试超时时间 (毫秒)
@@ -37,6 +37,7 @@ static=AI, TW, SG, JP, US, server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traff
 static=TikTok, TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|HK|HONGKONG)\b|(\d{4}-\d{2}-\d{2}|\dG|香港|国旗|节点)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
 static=Streaming,Final,HK ,TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|HK|HONGKONG)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/netflix.png
 static=Emby, Final,HK ,TW,SG,JP,US,server-tag-regex=^(?=.*(.))(?!.*((?i)群|邀请|Traffic|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/emby.png
+static=IP, resource-tag-regex=M, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png
 available=HK, server-tag-regex=(?i)(港|HK|Hong), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 available=TW, server-tag-regex=(?i)(台|TW|Tai), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 available=SG, server-tag-regex=(?i)(新加坡|坡|狮城|SG|Singapore), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
@@ -48,18 +49,24 @@ available=US, server-tag-regex=(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|
 
 
 [server_remote]
+https://911tg3rs.com/api/v1/client/subscribe?token=d4f40195b38b20a132278184313c9aab, tag=M, update-interval=172800, opt-parser=true, enabled=true
+https://ysy.xn--bwwx30f.top/link/8wZdbIQDyus5wlXQ?list=shadowrocket, tag=ysy, update-interval=172800, opt-parser=true, enabled=false
+https://aifun.trafficmanager.net/api/v1/client/subscribe?token=5d50953fff3267b51ed69907899376ac, tag=AF, update-interval=172800, opt-parser=true, enabled=false
+https://api.0be.xyz/api/userhome/rssusernodeext?subkey=3d993482-5a90-4fab-b8d2-a319f2b6be78&usenodetype=1, tag=kcy, update-interval=172800, opt-parser=true, enabled=true
 https://zlxz.80jm.com/api/v1/client/subscribe?token=543c8300256abc640a3161fca3a8e78b&flag=shadowrocket, tag=Tag-1735112386, update-interval=172800, opt-parser=true, enabled=false
-https://times1735026495.subtangniu.top:9606/v2b/mdss/api/v1/client/subscribe?token=0d0cedd272387eb27c50eceb66dd73f2, tag=梦迪, update-interval=172800, opt-parser=true, enabled=true
 https://proxyinfo.net/api/v1/client/subscribe?token=554b10d50d85ac82eed554c69e09241b, tag=性价比, update-interval=172800, opt-parser=true, enabled=false
 https://api-huacloud.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&url=https%3A%2F%2Fapi.xmancdn.com%2Fosubscribe.php%3Fsid%3D155769%26token%3DC7bcRWWpOdej%26sip002%3D1, tag=花云, update-interval=172800, opt-parser=true, enabled=true
-https://api.linkcube.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fapi-linkcube.com%2Fsubscribe%2Fmpzab-ol3f4emf, tag=绿叶, update-interval=172800, opt-parser=true, enabled=false
+https://times1735026495.subtangniu.top:9606/v2b/mdss/api/v1/client/subscribe?token=0d0cedd272387eb27c50eceb66dd73f2, tag=MDSS, update-interval=172800, opt-parser=true, enabled=true
+https://api.linkcube.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&scv=true&url=https%3A%2F%2Fapi-linkcube.com%2Fsubscribe%2Fmpzab-ol3f4emf, tag=绿叶, update-interval=172800, opt-parser=true, enabled=true
 
 
 [filter_remote]
+https://surge.short.gy/ip, tag=IP, force-policy=IP, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/ad, tag=ad, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/ai, tag=AI, force-policy=AI, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/tiktok, tag=TikTok, force-policy=TikTok, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/strm, tag=Streaming, force-policy=Streaming, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/okx, tag=OKX, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/talkatone, tag=Talkatone, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/wechat, tag=WeChat, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
