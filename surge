@@ -2,7 +2,7 @@
 # 日志级别
 loglevel = notify
 # 节点超时
-test-timeout = 10
+test-timeout = 5
 # 直连测试 URL
 internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
 # 代理测速 URL
@@ -29,49 +29,49 @@ always-raw-tcp-hosts = 149.154.*, 91.108.*
 geoip-maxmind-url = https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
 # 自定义 GeoIP 数据库
 wifi-assist = true
-use-local-host-item-for-proxy = false
+use-local-host-item-for-proxy = true
 allow-wifi-access = false
 allow-hotspot-access = false
 dns-server = system
+http-api = examplekey@0.0.0.0:6166
 qhttp-api-tls = false
 http-api-web-dashboard = true
+compatibility-mode = 1
 
 [Proxy Group]
-节点订阅 = select, policy-path=https://cloud.ykkk.tech/api/v1/client/subscribe?token=be49979f588d10cbfd5eced075d313ee, update-interval=10800, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, no-alert=1, hidden=1, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/relay.png
-Auto = smart, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Safari.png
+节点订阅 = select, policy-path=https://911tg3rs.com/api/v1/client/subscribe?token=d4f40195b38b20a132278184313c9aab, update-interval=10800, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, no-alert=1, hidden=1, include-all-proxies=0
 HK = smart, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, no-alert=0, hidden=1, include-all-proxies=0, policy-regex-filter=(?i)🇭🇰|香港|(\b(HK|Hong)\b), include-other-group=节点订阅
 TW = smart, policy-regex-filter=(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 SG = smart, policy-regex-filter=(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 JP = smart, policy-regex-filter=(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 US = smart, policy-regex-filter=(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
-IP = select, policy-path=https://sub.store/download/kc, update-interval=10800, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$
-IM = select, Final, HK, SG, TW, JP, US, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/netflix(red).png
-AI = select, Final, Auto, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/OpenAI_01.png, include-other-group=节点订阅
-TikTok = select, Final, Auto, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png, include-other-group=节点订阅
-Spotify = select, Final, Auto, HK, US, SG, JP, TW, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/spotify(green).png, include-other-group=节点订阅
-Final = select, Auto, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, update-interval=10800, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Surge_01.png
+IP = select, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png
+AI = select, Final, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ChatGPT.png, include-other-group=节点订阅
+TikTok = select, Final, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png, include-other-group=节点订阅
+Streaming = select, Final, HK, SG, TW, JP, US, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/netflix(red).png
+Final = select, HK, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, update-interval=10800, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Surge_01.png
 
 [Rule]
-RULE-SET,https://surge.short.gy/ad,REJECT
+RULE-SET,https://surge.short.gy/ad,REJECT,pre-matching
 RULE-SET,https://surge.short.gy/ip,IP,extended-matching
 RULE-SET,https://surge.short.gy/ai,AI
 RULE-SET,https://surge.short.gy/okx,DIRECT,"update-interval=604800"
-RULE-SET,https://surge.short.gy/spotify,Spotify
-RULE-SET,https://surge.short.gy/apple,DIRECT,"update-interval=604800",no-resolve
 RULE-SET,https://surge.short.gy/talkatone,DIRECT
-RULE-SET,https://surge.short.gy/tiktok,TikTok,extended-matching,"update-interval=604800"
-RULE-SET,https://surge.short.gy/IM,IM
-RULE-SET,https://surge.short.gy/proxy,Final,extended-matching
-RULE-SET,https://surge.short.gy/dnsp,Final
-GEOIP,CN,DIRECT
+RULE-SET,https://surge.short.gy/tiktok,TikTok,"update-interval=604800"
+RULE-SET,https://surge.short.gy/strm,Streaming
+RULE-SET,https://surge.short.gy/apple,DIRECT,"update-interval=604800",no-resolve
+RULE-SET,https://surge.short.gy/wechat,DIRECT
+RULE-SET,https://surge.short.gy/dnsp,Final,no-resolve
 RULE-SET,LAN,DIRECT,no-resolve
+GEOIP,CN,DIRECT,no-resolve
 FINAL,Final,dns-failed
 
 [Host]
+*ltltltltltltlt.top = 106.75.187.148
 *.xyz = server:223.5.5.5
 
 [MITM]
 # MITM over HTTP/2
-auto-quic-block = false
+h2 = true
 ca-passphrase = 7EC57453
 ca-p12 = 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
