@@ -6,8 +6,4 @@ DOMAIN,fclog.baidu.com
 DOMAIN,gsp0.baidu.com
 DOMAIN,hm.baidu.com
 DOMAIN,tiebac.baidu.com
-IP-CIDR,180.76.76.0/24
-DOMAIN,httpsdns.baidu.com
 DOMAIN,c.tieba.baidu.com
-DOMAIN,httpdns.baidu.com
-DOMAIN,httpdns.baidubce.com
