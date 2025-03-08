@@ -4,13 +4,13 @@ loglevel = notify
 # 节点超时
 test-timeout = 5
 # 直连测试 URL
-internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+internet-test-url = http://www.gstatic.com/generate_204
 # 代理测速 URL
 proxy-test-url = http://www.apple.com/library/test/success.html
 # 游戏优化: 开启后优先处理 UDP 数据，会增加系统负载
 udp-priority = true
 # UDP 回退行为
-udp-policy-not-supported-behaviour = REJECT
+udp-policy-not-supported-behaviour = DIRECT
 # DNS 服务器
 ipv6 = false
 # IPv6 DNS 查询
@@ -28,34 +28,45 @@ always-raw-tcp-hosts = 149.154.*, 91.108.*
 # 不进行协议嗅探
 geoip-maxmind-url = https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
 # 自定义 GeoIP 数据库
-wifi-assist = true
-use-local-host-item-for-proxy = true
-allow-wifi-access = false
-allow-hotspot-access = false
-dns-server = 223.5.5.5
+wifi-assist = false
+use-local-host-item-for-proxy = false
+allow-wifi-access = true
+allow-hotspot-access = true
+dns-server = 223.5.5.5, 119.29.29.29
 http-api = examplekey@0.0.0.0:6166
 qhttp-api-tls = false
 http-api-web-dashboard = true
+include-all-networks = false
+include-apns = false
+all-hybrid = false
 
 [Proxy Group]
-节点订阅 = select, policy-path=https://milus.one/modules/servers/ssm/api/services?token=7b065b78-f9e4-43e1-bb93-8d18d257f8f5&sid=68&type=surge, update-interval=10800, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, no-alert=1, hidden=1, include-all-proxies=0
+节点订阅 = select, policy-path=https://api.911tg3rs.com/api/verify?token=03c52cb9b2b81727fb8801cdb47be2c5&flag=, update-interval=10800, policy-regex-filter=^(?=.*(.))(?!.*((?i)群|邀请|0.01|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$, no-alert=1, hidden=1, include-all-proxies=0
 HK = smart, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, no-alert=0, hidden=1, include-all-proxies=0, policy-regex-filter=(?i)🇭🇰|香港|(\b(HK|Hong)\b), include-other-group=节点订阅
 TW = smart, policy-regex-filter=(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 SG = smart, policy-regex-filter=(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 JP = smart, policy-regex-filter=(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
 US = smart, policy-regex-filter=(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
-IP = select, DIRECT, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, policy-path=https://portal.jiasu.ai/modules/servers/V2RaySocks/subscribe/?sid=294&token=cf43d612599a&app=, update-interval=0
+
+EU = smart, policy-regex-filter=(?i)(?:🇦🇹|🇧🇪|🇧🇬|🇭🇷|🇨🇾|🇨🇿|🇩🇰|🇪🇪|🇫🇮|🇫🇷|🇩🇪|🇬🇷|🇭🇺|🇮🇪|🇮🇹|🇱🇻|🇱🇹|🇱🇺|🇲🇹|🇳🇱|🇵🇱|🇵🇹|🇷🇴|🇸🇰|🇸🇮|🇪🇸|🇸🇪|奥地利|比利时|保加利亚|克罗地亚|塞浦路斯|捷克|丹麦|爱沙尼亚|芬兰|法国|德国|希腊|匈牙利|爱尔兰|意大利|拉脱维亚|立陶宛|卢森堡|马耳他|荷兰|波兰|葡萄牙|罗马尼亚|斯洛伐克|斯洛文尼亚|西班牙|瑞典), icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=节点订阅
+IP = select, DIRECT, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, update-interval=0, include-other-group=节点订阅
 AI = select, TW, SG, JP, US, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ChatGPT.png, include-other-group=节点订阅
 Streaming = select, Final, HK, SG, TW, JP, US, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/netflix(red).png
 Final = select, no-alert=0, hidden=0, include-all-proxies=0, update-interval=10800, include-other-group=节点订阅, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Surge_01.png
 
 [Rule]
-DOMAIN-SUFFIX,a1.tktn.be,AI // Added for: a1.tktn.be:8443
-DOMAIN-SUFFIX,tdck.fun,AI,extended-matching
+IP-ASN,44907,SG,no-resolve
+IP-ASN,62014,SG,no-resolve
+IP-ASN,59930,US,no-resolve
+IP-ASN,62041,EU,no-resolve
+IP-ASN,211157,EU,no-resolve
+IP-CIDR,5.28.192.0/18,EU,no-resolve
+IP-CIDR,109.239.140.0/24,EU,no-resolve
+RULE-SET,https://surge.short.gy/ad,REJECT,pre-matching
 DOMAIN-SUFFIX,cf.xmsl.org,Streaming
 DOMAIN-SUFFIX,z.sfcj.org,Streaming,extended-matching
 RULE-SET,https://surge.short.gy/apple,DIRECT,extended-matching
-RULE-SET,https://surge.short.gy/talkatone,AI,extended-matching
+RULE-SET,https://surge.short.gy/talkatone,DIRECT,extended-matching
 RULE-SET,https://surge.short.gy/ip,IP,extended-matching
 RULE-SET,https://surge.short.gy/ai,AI
 RULE-SET,https://surge.short.gy/okx,DIRECT,"update-interval=604800"
@@ -67,9 +78,6 @@ RULE-SET,LAN,DIRECT,no-resolve
 RULE-SET,SYSTEM,DIRECT
 GEOIP,CN,DIRECT
 FINAL,Final,dns-failed
-
-[Host]
-RULE-SET:https://surge.short.gy/cndomain = server:syslib
 
 [MITM]
 # MITM over HTTP/2
