@@ -1,211 +1,164 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7892
+redir-port: 7893
+tproxy-port: 7894
+unified-delay: true
+geodata-mode: false
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 24
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+udp: true
+external-controller: 0.0.0.0:9090
+# external-ui: ui
+# external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
 
-proxy-providers:
-  节点订阅:
-    url: 'https://in.linkeless.net/api/v1/client/subscribe?token=6b1a975d1838537b58f6f12080513bc2'
-    interval: 3000
-    # 服务提供商-2:
-    #   url: http://your-another-service-provider
-    #   interval: 600
-
-    benchmark-timeout: 5
-    benchmark-url: http://www.gstatic.com/generate_204
-  节点订阅 2:
-    interval: 3000
-    url: "http://sub.store/download/kc"
-proxy-groups:
-  # 基于地区分组
-  - name: HK
-    filter: "澳门|🇲🇴|港|🇭🇰|HK|(?i)Hong"
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hong_Kong.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: TW
-    filter: "台|🇹🇼|湾|TW|(?i)Taiwan"
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Taiwan.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: 'SG '
-    filter: "新加坡|坡|狮城|🇸🇬|SG|(?i)Singapore"
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Singapore.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: 'JP '
-    filter: "日|🇯🇵|东京|JP|(?i)Japan"
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Japan.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: 'US '
-    filter: "美|🇺🇲|US|(?i)States|America"
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/United_States.png
-    interval: 120
-    lazy: true
-    tolerance: 50
-    type: url-test
-    include-all: true
-    hidden: true
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT5.png
-    name: AI
-    proxies:
-      - Final
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
-    type: select
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/netflix.png
-    name: Streaming
-    type: select
-    use:
-      - 节点订阅
-    proxies:
-      - Final
-      - HK
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
-  - icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/tiktok.png
-    name: Tiktok
-    proxies:
-      - Final
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
-    type: select
-    use:
-      - 节点订阅
-      - 节点订阅 2
-  - name: Final
-    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/stash1.png
-    type: select
-    proxies:
-      - HK
-      - TW
-      - 'SG '
-      - 'JP '
-      - 'US '
-    include-all: null
-    use:
-      - 节点订阅
-      - 节点订阅 2
-rules:
-  - RULE-SET,Apple,DIRECT
-  - RULE-SET,欧意,DIRECT
-  - RULE-SET,Tiktok,Tiktok
-  - RULE-SET,AI,AI
-  - RULE-SET,Media,Streaming
-  - RULE-SET,dnsp,Final
-  - RULE-SET,LAN,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,Final
-script:
-  shortcuts:
-    quic: network == 'udp' and dst_port == 443
+geox-url:
+  # geoip: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat'
+  # geosite: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat'
+  mmdb: 'https://gitlab.com/Masaiki/GeoIP2-CN/-/raw/release/Country.mmdb'
+  asn: 'https://gitlab.com/Loon0x00/loon_data/-/raw/main/geo/GeoLite2-ASN.mmdb'
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - +.v2ex.com
+  skip-domain:
+    - Mijia Cloud
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
 dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - +.lan
   default-nameserver:
     - system
   nameserver:
     - 223.5.5.5
-log-level: warning
-mode: rule
+    - 119.29.29.29
+# 锚点 - 节点订阅的参数 [每24小时更新一次订阅节点，每 60 秒一次健康检查]
+NodeParam: &NodeParam {type: http, interval: 86400, health-check: {enable: true, url: 'http://www.google.com/generate_204', interval: 60}}
+# 锚点 - 节点订阅
+proxy-providers:
+  我的节点:
+    url: https://api.911tg3rs.com/api/verify?token=cfcc1f655b9b4f9afc44ac0aba54b091
+    !!merge <<: *NodeParam
+    path: './proxy_provider/Providers.yaml'
+# 锚点 - 节点筛选组
+FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b))).*$'
+FilterJP: &FilterJP '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b))).*$'
+FilterKR: &FilterKR '^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\b))).*$'
+FilterSG: &FilterSG '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b))).*$'
+FilterUS: &FilterUS '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b))).*$'
+FilterUK: &FilterUK '^(?=.*((?i)🇬🇧|英国|伦敦|(\b(UK|United Kingdom)\b))).*$'
+FilterFR: &FilterFR '^(?=.*((?i)🇫🇷|法国|(\b(FR|France)\b))).*$'
+FilterDE: &FilterDE '^(?=.*((?i)🇩🇪|德国|(\b(DE|Germany)\b))).*$'
+FilterGame: &FilterGame '^(?=.*((?i)游戏|🎮|(\b(GAME)\b)))(?!.*((?i)回国|校园)).*$'
+FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
+# 锚点 - 故障转移参数 [每 10 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
+FallBack: &FallBack {type: fallback, interval: 10, lazy: true, url: 'http://www.google.com/generate_204', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all-providers: true}
+# 锚点 - 规则参数 [每天更新一次订阅规则，更新规则时使用直连策略]
+RuleSet: &RuleSet {type: http, behavior: classical, interval: 86400, format: yaml, proxy: DIRECT}
+# 策略组
+proxy-groups:
+  - {name: OpenAI, type: select, include-all: null, filter: '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$', icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png', proxies: [🇺🇸 美国节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇬🇧 英国节点, 🇫🇷 法国节点], use: [我的节点]}
+  - {name: Telegram, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png', use: [我的节点]}
+  - {name: Netflix, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png', use: [我的节点]}
+  - {name: TikTok, type: select, proxies: [🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点, Proxy], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png', use: [我的节点]}
+  - {name: Spotify, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png', use: [我的节点]}
+  - {name: Proxy, type: select, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/pompurin404/mihomo-party/master/resources/icon.png', use: [我的节点]}
+  - {name: 🇭🇰 香港节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b))).*$', hidden: true, interval: 10, lazy: true, type: fallback, use: null, include-all: true}
+  - {name: 🇯🇵 日本节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b))).*$', hidden: true, interval: 10, lazy: true, type: fallback, use: null, include-all: true}
+  - {name: 🇰🇷 韩国节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\b))).*$', hidden: true, interval: 10, lazy: true, type: fallback, use: null, include-all: true}
+  - {name: 🇸🇬 新加坡节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b))).*$', hidden: true, include-all: true, interval: 10, lazy: true, type: fallback}
+  - {name: 🇺🇸 美国节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b))).*$', hidden: true, include-all: true, interval: 10, lazy: true, type: fallback}
+  - {name: 🇬🇧 英国节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇬🇧|英国|伦敦|(\b(UK|United Kingdom)\b))).*$', hidden: true, include-all: true, interval: 10, lazy: true, type: fallback}
+  - {name: 🇫🇷 法国节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇫🇷|法国|(\b(FR|France)\b))).*$', hidden: true, include-all: true, interval: 10, lazy: true, type: fallback}
+  - {name: 🇩🇪 德国节点, !!merge <<: *FallBack, filter: '^(?=.*((?i)🇩🇪|德国|(\b(DE|Germany)\b))).*$', hidden: true, include-all: true, interval: 10, lazy: true, type: fallback}
+# 订阅规则
 rule-providers:
-  欧意:
+  Netflix:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Media'
+    path: './RuleSet/Netflix.yaml'
     behavior: classical
     format: text
     interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/OKX
-  Telegram:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Telegram
-  AI:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/AI
   Apple:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Apple
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml'
+    path: './RuleSet/Apple.yaml'
+  TikTok:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok_No_Resolve.yaml'
+    path: './RuleSet/TikTok.yaml'
   Spotify:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Spotify
-  Media:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Media
-  ProxyGFWlist:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyGFWlist.list
-  Tiktok:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Tiktok
-  ChinaDomain:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaDomain.list
-  网络信息直连:
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/wlxx
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml'
+    path: './RuleSet/Spotify.yaml'
+  OpenAI:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml'
+    path: './RuleSet/OpenAI.yaml'
   LAN:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml'
+    path: './RuleSet/LAN.yaml'
+  Talkatone:
     behavior: classical
     format: text
     interval: 86400
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/LocalAreaNetwork.list
-  AD:
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Talkatone
+  ad:
     behavior: classical
     format: text
     interval: 86400
-    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/分流去广告
-  dnsp:
+    url: https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/ad
+  WeChat:
     behavior: classical
     format: text
     interval: 86400
-    url: https://surge.short.gy/dnsp
+    url: https://surge.short.gy/wechat
+# 分流规则指向
+rules:
+  - RULE-SET,WeChat,DIRECT
+  - RULE-SET,ad,REJECT
+  - RULE-SET,Talkatone,DIRECT
+  - RULE-SET,Apple,DIRECT
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
