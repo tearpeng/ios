@@ -102,7 +102,7 @@
                 "timeout": 5000,
                 "lazy": true
             },
-            "url": "https://bbq.mcwy.xyz/api/v1/client/subscribe?token=e969d8af1e13369589cab068d2597834",
+            "url": "https://in.linkeless.net/api/v1/client/subscribe?token=c1e04cb53ce97c7acdeafc6633b2500f",
             "path": "./proxies/provider1.yaml",
             "override": {
                 "tfo": false,
