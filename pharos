@@ -1,937 +1,142 @@
-{
-    "proxy": {
-        "type": "select",
-        "include-all-providers": true,
-        "proxies": [
-            "🚀全球代理",
-            "🎯全球直连",
-            "♻️自动选择",
-            "⚡️均衡负载",
-            "🔯故障转移",
-            "🇭🇰香港自动",
-            "🇹🇼台湾自动",
-            "🇯🇵日本自动",
-            "🇺🇸美国自动",
-            "🇸🇬新加坡自动",
-            "🇰🇷韩国自动",
-            "🌐其它地区"
-        ]
-    },
-    "direct": {
-        "type": "select",
-        "include-all-providers": true,
-        "proxies": [
-            "🎯全球直连",
-            "🚀全球代理",
-            "♻️自动选择",
-            "⚡️均衡负载",
-            "🔯故障转移",
-            "🇭🇰香港自动",
-            "🇹🇼台湾自动",
-            "🇯🇵日本自动",
-            "🇺🇸美国自动",
-            "🇸🇬新加坡自动",
-            "🇰🇷韩国自动",
-            "🌐其它地区"
-        ]
-    },
-    "ipcidr_mrs": {
-        "type": "http",
-        "interval": 86400,
-        "behavior": "ipcidr",
-        "format": "mrs",
-        "proxy": "🎯全球直连"
-    },
-    "domain_mrs": {
-        "type": "http",
-        "interval": 86400,
-        "behavior": "domain",
-        "format": "mrs",
-        "proxy": "🎯全球直连"
-    },
-    "p": {
-        "type": "http",
-        "interval": 3600,
-        "size-limit": 0,
-        "header": {
-            "User-Agent": [
-                "meta;clash.meta;Clash/v1.18.0;clash"
-            ]
-        },
-        "health-check": {
-            "enable": true,
-            "url": "https://www.gstatic.com/generate_204",
-            "interval": 300,
-            "timeout": 5000,
-            "lazy": true
-        }
-    },
-    "override": {
-        "tfo": false,
-        "mptcp": false,
-        "udp": true,
-        "udp-over-tcp": false,
-        "skip-cert-verify": true,
-        "ip-version": "ipv4-prefer"
-    },
-    "u": {
-        "type": "url-test",
-        "tolerance": 1,
-        "strategy": "consistent-hashing",
-        "url": "https://www.gstatic.com/generate_204",
-        "interval": 300,
-        "lazy": true,
-        "timeout": 5000,
-        "max-failed-times": 5,
-        "include-all-providers": true
-    },
-    "proxy-providers": {
-        "provider1": {
-            "type": "http",
-            "interval": 3600,
-            "size-limit": 0,
-            "header": {
-                "User-Agent": [
-                    "meta;clash.meta;Clash/v1.18.0;clash"
-                ]
-            },
-            "health-check": {
-                "enable": true,
-                "url": "https://www.gstatic.com/generate_204",
-                "interval": 300,
-                "timeout": 5000,
-                "lazy": true
-            },
-            "url": "https://in.linkeless.net/api/v1/client/subscribe?token=c1e04cb53ce97c7acdeafc6633b2500f",
-            "path": "./proxies/provider1.yaml",
-            "override": {
-                "tfo": false,
-                "mptcp": false,
-                "udp": true,
-                "udp-over-tcp": false,
-                "skip-cert-verify": true,
-                "ip-version": "ipv4-prefer",
-                "additional-suffix": " 1"
-            }
-        }
-    },
-    "port": 7892,
-    "socks-port": 7893,
-    "mixed-port": 7890,
-    "allow-lan": true,
-    "bind-address": "*",
-    "find-process-mode": "off",
-    "mode": "rule",
-    "geodata-mode": false,
-    "geodata-loader": "memconservative",
-    "geox-url": {
-        "geoip": "https://cdn.jsdmirror.cn/gh/MetaCubeX/meta-rules-dat@release/geoip.dat",
-        "geosite": "https://cdn.jsdmirror.cn/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
-        "mmdb": "https://cdn.jsdmirror.cn/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb",
-        "asn": "https://cdn.jsdmirror.cn/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb"
-    },
-    "geo-auto-update": false,
-    "geo-update-interval": 24,
-    "geosite-matcher": "succinct",
-    "global-ua": "clash.meta",
-    "etag-support": true,
-    "log-level": "info",
-    "ipv6": true,
-    "external-controller": "0.0.0.0:9093",
-    "secret": "",
-    "external-controller-cors": {
-        "allow-origins": [
-            "http://localhost:*",
-            "http://127.0.0.1:*"
-        ],
-        "allow-private-network": true
-    },
-    "unified-delay": true,
-    "tcp-concurrent": true,
-    "external-ui": "ui",
-    "external-ui-name": "xd",
-    "external-ui-url": "https://ghfast.top/github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
-    "external-doh-server": "/dns-query",
-    "global-client-fingerprint": "chrome",
-    "disable-keep-alive": true,
-    "keep-alive-idle": 15,
-    "keep-alive-interval": 15,
-    "experimental": {
-        "quic-go-disable-gso": true,
-        "quic-go-disable-ecn": true,
-        "dialer-ip4p-convert": false
-    },
-    "hosts": {
-        "ntp.ntsc.ac.cn": [
-            "114.118.7.161",
-            "114.118.7.163"
-        ]
-    },
-    "profile": {
-        "store-selected": true,
-        "store-fake-ip": true
-    },
-    "ntp": {
-        "enable": false,
-        "write-to-system": false,
-        "server": "ntp.ntsc.ac.cn",
-        "port": 123,
-        "interval": 30
-    },
-    "sniffer": {
-        "enable": true,
-        "force-dns-mapping": true,
-        "parse-pure-ip": true,
-        "override-destination": false,
-        "sniff": {
-            "HTTP": {
-                "ports": [
-                    80,
-                    "8080-8880"
-                ],
-                "override-destination": true
-            },
-            "TLS": {
-                "ports": [
-                    443,
-                    8443
-                ]
-            },
-            "QUIC": {
-                "ports": [
-                    443,
-                    8443
-                ]
-            }
-        },
-        "force-domain": [
-            "+.v2ex.com"
-        ],
-        "skip-domain": [
-            "Mijia.Cloud.com"
-        ],
-        "skip-src-address": [
-            "192.168.0.3/32"
-        ],
-        "skip-dst-address": [
-            "192.168.0.3/32"
-        ]
-    },
-    "tun": {
-        "enable": true,
-        "stack": "gvisor",
-        "auto-route": true,
-        "auto-detect-interface": true,
-        "dns-hijack": [
-            "any:53"
-        ],
-        "device": "utun0",
-        "mtu": 1500,
-        "strict-route": true,
-        "gso": true,
-        "gso-max-size": 65536,
-        "udp-timeout": 300,
-        "endpoint-independent-nat": false
-    },
-    "dns": {
-        "enable": true,
-        "cache-algorithm": "arc",
-        "prefer-h3": false,
-        "use-hosts": true,
-        "use-system-hosts": true,
-        "respect-rules": true,
-        "listen": "0.0.0.0:1053",
-        "ipv6": true,
-        "default-nameserver": [
-            "quic://223.5.5.5",
-            "quic://223.6.6.6"
-        ],
-        "enhanced-mode": "fake-ip",
-        "fake-ip-range": "198.18.0.0/16",
-        "fake-ip-filter-mode": "blacklist",
-        "fake-ip-filter": [
-            "geosite:private",
-            "adguardteam.github.io",
-            "adrules.top",
-            "amobile.music.tc.qq.com",
-            "anti-ad.net",
-            "api-jooxtt.sanook.com",
-            "api.joox.com",
-            "aqqmusic.tc.qq.com",
-            "dl.stream.qqmusic.qq.com",
-            "ff.dorado.sdo.com",
-            "heartbeat.belkin.com",
-            "isure.stream.qqmusic.qq.com",
-            "joox.com",
-            "lens.l.google.com",
-            "local.adguard.org",
-            "localhost.ptlogin2.qq.com",
-            "localhost.sec.qq.com",
-            "mesu.apple.com",
-            "mobileoc.music.tc.qq.com",
-            "music.taihe.com",
-            "musicapi.taihe.com",
-            "na.b.g-tun.com",
-            "proxy.golang.org",
-            "ps.res.netease.com",
-            "shark007.net",
-            "songsearch.kugou.com",
-            "static.adtidy.org",
-            "streamoc.music.tc.qq.com",
-            "stun.l.google.com",
-            "swcdn.apple.com",
-            "swdist.apple.com",
-            "swdownload.apple.com",
-            "swquery.apple.com",
-            "swscan.apple.com",
-            "time-ios.apple.com",
-            "time1.cloud.tencent.com",
-            "trackercdn.kugou.com",
-            "xnotify.xboxlive.com",
-            "*.*.xboxlive.com",
-            "+.stun.*.*",
-            "+.stun.*.*.*",
-            "+.stun.*.*.*.*",
-            "+.stun.*.*.*.*.*",
-            "localhost.*.weixin.qq.com",
-            "ntp.*.com",
-            "ntp1.*.com",
-            "ntp2.*.com",
-            "ntp3.*.com",
-            "ntp4.*.com",
-            "ntp5.*.com",
-            "ntp6.*.com",
-            "ntp7.*.com",
-            "stun.*.*",
-            "stun.*.*.*",
-            "time.*.apple.com",
-            "time.*.com",
-            "time.*.edu.cn",
-            "time.*.gov",
-            "time1.*.com",
-            "time2.*.com",
-            "time3.*.com",
-            "time4.*.com",
-            "time5.*.com",
-            "time6.*.com",
-            "time7.*.com",
-            "xbox.*.*.microsoft.com",
-            "xbox.*.microsoft.com",
-            "+.126.net",
-            "+.3gppnetwork.org",
-            "+.battle.net",
-            "+.battlenet.com.cn",
-            "+.cdn.nintendo.net",
-            "+.cmbchina.com",
-            "+.cmbimg.com",
-            "+.direct",
-            "+.example",
-            "+.ff14.sdo.com",
-            "+.ffxiv.com",
-            "+.finalfantasyxiv.com",
-            "+.gcloudcs.com",
-            "+.gcloudsdk.com",
-            "+.home.arpa",
-            "+.invalid",
-            "+.kuwo.cn",
-            "+.lan",
-            "+.linksys.com",
-            "+.linksyssmartwifi.com",
-            "+.local",
-            "+.localdomain",
-            "+.localhost",
-            "+.market.xiaomi.com",
-            "+.mcdn.bilivideo.cn",
-            "+.media.dssott.com",
-            "+.msftconnecttest.com",
-            "+.msftncsi.com",
-            "+.music.163.com",
-            "+.music.migu.cn",
-            "+.n0808.com",
-            "+.nflxvideo.net",
-            "+.ntp.org.cn",
-            "+.oray.com",
-            "+.orayimg.com",
-            "+.pool.ntp.org",
-            "+.router.asus.com",
-            "+.sandai.net",
-            "+.square-enix.com",
-            "+.srv.nintendo.net",
-            "+.steamcontent.com",
-            "+.stun.playstation.net",
-            "+.test",
-            "+.time.edu.cn",
-            "+.uu.163.com",
-            "+.wargaming.net",
-            "+.wggames.cn",
-            "+.wotgame.cn",
-            "+.wowsgame.cn",
-            "+.xiami.com",
-            "+.y.qq.com"
-        ],
-        "nameserver-policy": {
-            "github.akams.cn": [
-                "quic://223.5.5.5",
-                "quic://223.6.6.6"
-            ],
-            "+.jp": [
-                "https://public.dns.iij.jp/dns-query#h3=true"
-            ],
-            "+.hk": [
-                "quic://dns.nextdns.io"
-            ],
-            "+.eu": [
-                "quic://dns0.eu"
-            ],
-            "geosite:private,CN": [
-                "quic://223.5.5.5",
-                "quic://223.6.6.6"
-            ]
-        },
-        "nameserver": [
-         
-        ],
-        "proxy-server-nameserver": [
-       
-        ],
-        "direct-nameserver": [
-            "233.5.5.5",
-            "119.29.29.29"
-        ],
-        "direct-nameserver-follow-policy": true
-    },
-    "proxies": [
-        {
-            "name": "🟢 直连",
-            "type": "direct",
-            "udp": true
-        }
-    ],
-    "proxy-groups": [
-        {
+port: 7890
+socks-port: 7891
+mixed-port: 7892
+redir-port: 7893
+tproxy-port: 7894
+unified-delay: true
+geodata-mode: false
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 24
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+udp: true
+external-controller: 0.0.0.0:9090
+# external-ui: ui
+# external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
 
-            
-            "name": "YouTube",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/youtube.png"
-        },
-        {
+geox-url:
+  # geoip: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat'
+  # geosite: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat'
+  mmdb: 'https://gitlab.com/Masaiki/GeoIP2-CN/-/raw/release/Country.mmdb'
+  asn: 'https://gitlab.com/Loon0x00/loon_data/-/raw/main/geo/GeoLite2-ASN.mmdb'
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - +.v2ex.com
+  skip-domain:
+    - Mijia Cloud
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - +.lan
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+# 锚点 - 节点订阅的参数 [每24小时更新一次订阅节点，每 60 秒一次健康检查]
+NodeParam: &NodeParam {type: http, interval: 86400, health-check: {enable: true, url: 'http://www.google.com/generate_204', interval: 60}}
+# 锚点 - 节点订阅
+proxy-providers:
+  我的节点:
+    url: https://47.115.49.124:9999/api/v1/client/subscribe?token=b98f38b0cbd2a6446c9c6d884d3f289a
+    !!merge <<: *NodeParam
+    path: './proxy_provider/Providers.yaml'
+# 锚点 - 节点筛选组
+FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b))).*$'
+FilterJP: &FilterJP '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b))).*$'
+FilterSG: &FilterSG '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b))).*$'
+FilterUS: &FilterUS '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b))).*$'
+FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
+# 策略组参数锚点
+# 锚点 - 故障转移参数 [每 10 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
+FallBack: &FallBack {type: fallback, interval: 10, lazy: true, url: 'http://www.google.com/generate_204', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all-providers: true}
+# 锚点 - 规则参数 [每天更新一次订阅规则，更新规则时使用直连策略]
+RuleSet: &RuleSet {type: http, behavior: classical, interval: 86400, format: yaml, proxy: DIRECT}
+# 策略组
+proxy-groups:
  
-        
-        
-            "name": "AI",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/ChatGPT6.png"
-        },
-        {
-     
-            "name": "Telegram",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/telegram.png"
-        },
-        {
-            "name": "TikTok",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png"
-        },
-        {
-            "name": "NETFLIX",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netfix.png"
-        },
-        {
-            "name": "DisneyPlus",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disneyplus.png"
-        },
-        {
-            "name": "HBO",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png"
-        },
-        {
-            "name": "Apple",
-            "type": "select",
-            "proxies": [
-                "全球直连",
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/apple.png"
-        },
-        {
-            "name": "Emby",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/emby.png"
-        },
-        {
+  - {name: OpenAi, type: select, include-all: true, filter: *FilterAll, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png'}
+  - {name: Apple, type: select, proxies: [DIRECT, Proxy, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png'}
+  - {name: TikTok, type: select, proxies: [Proxy, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png'}
+  - {name: Streaming, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点], icon: 'https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/netflix.png', include-all: true}
+  - {name: Telegram, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png'}
+  - {name: Proxy, type: select, proxies: [🇭🇰 香港节点, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点], icon: 'https://s11.aconvert.com/convert/p3r68-cdx67/g28i1-89ngg-001.ico', include-all: true}
+  - {name: 🇭🇰 香港节点, !!merge <<: *FallBack, filter: *FilterHK}
+  - {name: 🇺🇸 美国节点, !!merge <<: *FallBack, filter: *FilterUS}
+  - {name: 🇯🇵 日本节点, !!merge <<: *FallBack, filter: *FilterJP}
+  - {name: 🇸🇬 新加坡节点, !!merge <<: *FallBack, filter: *FilterSG}
+# 订阅规则
+rule-providers:
+  Streaming:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/tearpeng/ios/refs/heads/main/Media'
+    path: './RuleSet/Media'
+  Apple:
+    !!merge <<: *RuleSet
+    url: 'https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml'
+    path: './RuleSet/Apple.yaml'
 
-        
-            "name": "巴哈姆特",
-            "type": "select",
-            "proxies": [
-                "台湾节点"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/bahamut.png"
-        },
-        {
-            "name": "Spotify",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/spotify.png"
-        },
-        {
 
-            "name": "STEAM",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png"
-        },
-        {
-            "name": "全球直连",
-            "type": "select",
-            "proxies": [
-                "🟢 直连",
-                 "全部节点"
-            ],
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"
-        },
-        {
-            "name": "Final",
-            "type": "select",
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "全部节点",
-                "自建/家宽节点",
-                "全球直连"
-            ],
-            "include-all": true,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png"
-        },
-        {
-            "name": "自建/家宽节点",
-            "type": "select",
-            "include-all": true,
-            "filter": "(?i)(自建|CF|The_house|private)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"
-        },
-        {
-            "name": "香港节点",
-            "type": "select",
-            "proxies": [
-                "香港自动",
-                "香港均衡"
-            ],
-            "include-all": true,
-            "filter": "(?i)(港|hk|hongkong|Hong Kong)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"
-        },
-        {
-            "name": "新加坡节点",
-            "type": "select",
-            "proxies": [
-                "新加坡自动",
-                "新加坡均衡"
-            ],
-            "include-all": true,
-            "filter": "(?i)(新|🇸🇬|SG|singapore)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"
-        },
-        {
-            "name": "日本节点",
-            "type": "select",
-            "proxies": [
-                "日本自动",
-                "日本均衡"
-            ],
-            "include-all": true,
-            "filter": "(?i)(日本|🇯🇵|JP|Japan)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png"
-        },
-        {
-            "name": "台湾节点",
-            "type": "select",
-            "proxies": [
-                "台湾自动",
-                "台湾均衡"
-            ],
-            "include-all": true,
-            "filter": "(?i)(台|🇹🇼|TW|Taiwan)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Taiwan_China.png"
-        },
-        {
-            "name": "美国节点",
-            "type": "select",
-            "proxies": [
-                "美国自动",
-                "美国均衡"
-            ],
-            "include-all": true,
-            "filter": "(?i)(美|🇺🇲|US|America|United States)",
-            "exclude-filter": "(?i)(Australia|Russia)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/America.png"
-        },
-        {
-            "name": "欧洲节点",
-            "type": "select",
-            "include-all": true,
-            "filter": "(?i)(🇦🇱|🇦🇩|🇦🇹|🇧🇾|🇧🇪|🇧🇦|🇧🇬|🇭🇷|🇨🇾|🇨🇿|🇩🇰|🇪🇪|🇫🇮|🇫🇷|🇩🇪|🇬🇷|🇭🇺|🇮🇸|🇮🇪|🇮🇹|🇽🇰|🇱🇻|🇱🇮|🇱🇹|🇱🇺|🇲🇹|🇲🇩|🇲🇨|🇲🇪|🇳🇱|🇲🇰|🇳🇴|🇵🇱|🇵🇹|🇷🇴|🇷🇺|🇸🇲|🇷🇸|🇸🇰|🇸🇮|🇪🇸|🇸🇪|🇨🇭|🇹🇷|🇺🇦|🇬🇧|🇻🇦)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/European.png"
-        },
-        {
-            "name": "香港自动",
-            "type": "url-test",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "hidden": true,
-            "filter": "(?i)(香港|hk|hongkong|Hong Kong)",
-            "exclude-filter": "(?i)(The_HK_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"
-        },
-        {
-            "name": "新加坡自动",
-            "type": "url-test",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "hidden": true,
-            "filter": "(?i)(新|🇸🇬|SG|Singapore)",
-            "exclude-filter": "(?i)(The_SG_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"
-        },
-        {
-            "name": "日本自动",
-            "type": "url-test",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "hidden": true,
-            "filter": "(?i)(日本|🇯🇵|JP|Japan)",
-            "exclude-filter": "(?i)(The_JP_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"
-        },
-        {
-            "name": "台湾自动",
-            "type": "url-test",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "hidden": true,
-            "filter": "(?i)(台|🇹🇼|TW|Taiwan)",
-            "exclude-filter": "(?i)(The_TW_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"
-        },
-        {
-            "name": "美国自动",
-            "type": "url-test",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "hidden": true,
-            "filter": "(?i)(美|🇺🇲|US|America|united States)",
-            "exclude-filter": "(?i)(The_US_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|russia|austria|plus|traffic|Australia|rus|aus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"
-        },
-        {
-            "name": "香港均衡",
-            "type": "load-balance",
-            "include-all": true,
-            "strategy": "consistent-hashing",
-            "hidden": true,
-            "filter": "(?i)(香港|hk|hongkong|Hong Kong)",
-            "exclude-filter": "(?i)(The_HK_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"
-        },
-        {
-            "name": "新加坡均衡",
-            "type": "load-balance",
-            "include-all": true,
-            "strategy": "consistent-hashing",
-            "hidden": true,
-            "filter": "(?i)(新|🇸🇬|SG|Singapore)",
-            "exclude-filter": "(?i)(The_SG_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"
-        },
-        {
-            "name": "日本均衡",
-            "type": "load-balance",
-            "include-all": true,
-            "strategy": "consistent-hashing",
-            "hidden": true,
-            "filter": "(?i)(日本|🇯🇵|JP|Japan)",
-            "exclude-filter": "(?i)(The_JP_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"
-        },
-        {
-            "name": "台湾均衡",
-            "type": "load-balance",
-            "include-all": true,
-            "strategy": "consistent-hashing",
-            "hidden": true,
-            "filter": "(?i)(台|🇹🇼|TW|Taiwan)",
-            "exclude-filter": "(?i)(The_TW_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"
-        },
-        {
-            "name": "美国均衡",
-            "type": "load-balance",
-            "include-all": true,
-            "strategy": "consistent-hashing",
-            "hidden": true,
-            "filter": "(?i)(美|🇺🇲|US|America|united States)",
-            "exclude-filter": "(?i)(The_US_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|russia|austria|plus|traffic|Australia|rus|aus)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"
-        },
-        {
-            "name": "故障转移",
-            "type": "fallback",
-            "include-all": true,
-            "proxies": [
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "自建/家宽节点"
-            ],
-            "interval": 300,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png"
-        },
-        {
-            "name": "全部节点",
-            "type": "select",
-            "include-all": true,
-            "tolerance": 20,
-            "interval": 300,
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/all.png"
-        },
-        {
-            "name": "GLOBAL",
-            "type": "select",
-            "include-all": true,
-            "proxies": [
-                "YouTube",
-                "Telegram",
-                "TikTok",
-                "AI",
-                "NETFLIX",
-                "DisneyPlus",
-                "HBO",
-                "Apple",
-                "Emby",
-                "巴哈姆特",
-                "Spotify",
-                "STEAM",
-                "全球直连",
-                "自建/家宽节点",
-                "香港节点",
-                "新加坡节点",
-                "日本节点",
-                "台湾节点",
-                "美国节点",
-                "欧洲节点",
-                "香港自动",
-                "新加坡自动",
-                "日本自动",
-                "台湾自动",
-                "美国自动",
-                "香港均衡",
-                "新加坡均衡",
-                "日本均衡",
-                "台湾均衡",
-                "美国均衡",
-                "故障转移",
-                "全部节点",
-                "Final"
-            ],
-            "exclude-filter": "(?i)(🟢 直连)",
-            "icon": "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/global.png"
-        }
-    ],
-    "rules": [
-        "RULE-SET,ai_domain,AI",
-        "GEOSITE,youtube,YouTube",
-        "GEOSITE,apple,Apple",
-        "GEOSITE,telegram,Telegram",
-        "GEOIP,telegram,Telegram,no-resolve",
-        "GEOSITE,netflix,NETFLIX",
-        "GEOSITE,disney,DisneyPlus",
-        "GEOSITE,hbo,HBO",
-        "RULE-SET,emby_domain,Emby",
-        "GEOSITE,spotify,Spotify",
-        "GEOSITE,bahamut,巴哈姆特",
-        "GEOSITE,tiktok,TikTok",
-        "GEOSITE,steam,STEAM",
-        "GEOIP,cn,全球直连",
-        "MATCH,Final"
-    ],
-    "rule-providers": {
-        "emby_domain": {
-            "type": "http",
-            "interval": 86400,
-            "behavior": "domain",
-            "format": "mrs",
-            "url": "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/emby.mrs"
-        },
-        "ai_domain": {
-            "type": "http",
-            "interval": 86400,
-            "behavior": "domain",
-            "format": "mrs",
-            "url": "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/ai.mrs"
-        },
-        "fakeip_filter_domain": {
-            "type": "http",
-            "interval": 86400,
-            "behavior": "domain",
-            "format": "mrs",
-            "url": "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs"
-        },
-        "bilibili_ip": {
-            "type": "http",
-            "interval": 86400,
-            "behavior": "ipcidr",
-            "format": "mrs",
-            "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/bilibili.mrs"
-        }
-    },
-    "sub-rules": {}
-}
+  TikTok:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.yaml'
+    path: './RuleSet/TikTok.yaml'
+  OpenAI:
+    !!merge <<: *RuleSet
+    url: 'https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml'
+    path: './RuleSet/OpenAI.yaml'
+  OKX:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OKX/OKX.yaml'
+    path: './RuleSet/OKX.yaml'
+  微信:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml'
+    path: './RuleSet/WeChat.yaml'
+  LAN:
+    !!merge <<: *RuleSet
+    url: 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml'
+    path: './RuleSet/LAN.yaml'
+
+# 分流规则指向
+rules:
+  - RULE-SET,Streaming,Streaming
+  - RULE-SET,微信,DIRECT
+  - RULE-SET,Apple,Apple
+  - RULE-SET,OKX,DIRECT
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,OpenAI,OpenAi
+  - RULE-SET,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
