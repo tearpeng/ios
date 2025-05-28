@@ -389,22 +389,14 @@
             ]
         },
         "nameserver": [
-            "https://1.1.1.1/dns-query#h3=true",
-            "https://1.0.0.1/dns-query#h3=true",
-            "https://8.8.8.8/dns-query#h3=true",
-            "https://8.8.4.4/dns-query#h3=true",
-            "https://185.222.222.222/dns-query#h3=true",
-            "https://45.11.45.11/dns-query#h3=true",
-            "quic://94.140.15.15",
-            "quic://94.140.14.140"
+         
         ],
         "proxy-server-nameserver": [
-            "quic://223.5.5.5",
-            "quic://223.6.6.6"
+       
         ],
         "direct-nameserver": [
-            "quic://223.5.5.5",
-            "quic://223.6.6.6"
+            "233.5.5.5",
+            "119.29.29.29"
         ],
         "direct-nameserver-follow-policy": true
     },
