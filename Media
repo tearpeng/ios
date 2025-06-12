@@ -33,8 +33,6 @@ DOMAIN-SUFFIX,ext-twitch.tv
 DOMAIN-SUFFIX,primevideo.tv
 DOMAIN-SUFFIX,linetv.tw
 DOMAIN-SUFFIX,hulu.us
-DOMAIN-SUFFIX,tiktok.us
-DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-SUFFIX,iq.com
 DOMAIN-SUFFIX,dmm.com
 DOMAIN-SUFFIX,fox.com
@@ -67,7 +65,6 @@ DOMAIN-SUFFIX,indazn.com
 DOMAIN-SUFFIX,muscdn.com
 DOMAIN-SUFFIX,ocnttv.com
 DOMAIN-SUFFIX,sndcdn.com
-DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,uplynk.com
 DOMAIN-SUFFIX,amebame.com
 DOMAIN-SUFFIX,bamgrid.com
@@ -82,8 +79,6 @@ DOMAIN-SUFFIX,pandora.com
 DOMAIN-SUFFIX,phprcdn.com
 DOMAIN-SUFFIX,pornhub.com
 DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,tiktokw.com
 DOMAIN-SUFFIX,viblast.com
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,abema-tv.com
@@ -115,8 +110,7 @@ DOMAIN-SUFFIX,hulustream.com
 DOMAIN-SUFFIX,primevideo.com
 DOMAIN-SUFFIX,soundcloud.com
 DOMAIN-SUFFIX,spotifycdn.com
-DOMAIN-SUFFIX,spotilocal.com
-DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,spotilocal.co
 DOMAIN-SUFFIX,amazonvideo.com
 DOMAIN-SUFFIX,amebaowndme.com
 DOMAIN-SUFFIX,byteoversea.com
@@ -253,7 +247,6 @@ DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,dualstack.ichnaea-web-
 DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
 DOMAIN-KEYWORD,-spotify-com
-DOMAIN-KEYWORD,-tiktokcdn-com
 DOMAIN-KEYWORD,tvbanywhere
 USER-AGENT,AbemaTV*
 USER-AGENT,InstantVideo.US*
@@ -297,7 +290,6 @@ USER-AGENT,SoundCloud*
 USER-AGENT,*Spotify*
 USER-AGENT,TaiwanGood*
 USER-AGENT,TIDAL*
-USER-AGENT,TikTok*
 USER-AGENT,Viu*
 USER-AGENT,WeTV*
 USER-AGENT,com.google.ios.youtube*
