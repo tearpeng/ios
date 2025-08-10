@@ -52,19 +52,7 @@ available=US, server-tag-regex=(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|
 
 
 [server_remote]
-https://911tg3rs.com/api/verify?token=1fb303381f8ea750726f9ba853cd9971, tag=MESL, update-interval=172800, opt-parser=true, enabled=true
-https://a02.fflink.cc/api/v1/client/subscribe?token=a9f238adedff377bc716755de97c9522, tag=闪狐云, update-interval=172800, opt-parser=false, enabled=true
-https://bbq.mcwy.xyz/api/v1/client/subscribe?token=e969d8af1e13369589cab068d2597834, tag=Tag-1748670354, update-interval=172800, opt-parser=false, enabled=false
-https://sublink.esnclink.com/api/v1/client/subscribe?token=cc987552b1a58513a4a1cedb6e2b9a5a, tag=Tag-1747835194, update-interval=172800, opt-parser=false, enabled=false
-https://bayoeorescentpossessicoanseparateuneforescenphocommitte.adoptangelaboradvacotionclwonthorughconfrmcompimentdeseertaltar.org/link/xceXgU84gVN4dC69?sub=2, tag=薯条, update-interval=172800, opt-parser=true, enabled=false
-http://8.129.23.122/s/4f330c7d72deac4a31bd3648e23a919e, tag=suda, update-interval=172800, opt-parser=false, enabled=false
-https://47.115.49.124:9998/api/v1/client/subscribe?token=3727618b9736a698304a15f993007f2b&flag=shadowrocket, tag=CTC, update-interval=172800, opt-parser=true, enabled=false
-https://911tg3rs.com/api/verify?token=37c38f16d33548f187e5cbed888291fe, tag=MESL, update-interval=172800, opt-parser=false, enabled=false
-https://beta.linkeless.com/service/sub?token=c1e04cb53ce97c7acdeafc6633b2500f&inbound=1, tag=Linkeless, update-interval=172800, opt-parser=true, enabled=false
-https://jmssub.net/members/getsub.php?service=1163374&id=6048adb6-7da2-4b78-959e-8038134f1e6c, tag=搬瓦工, update-interval=172800, opt-parser=true, enabled=false
-https://huaikhwang.central-world.org/api/v1/trails/bolster?token=2ad215161f9921c1e2e655286da8f3d0, tag=TAG, update-interval=172800, opt-parser=false, enabled=false
-https://api.911tg3rs.com/api/verify?token=9ce1182e9bb65470b2ddccd7f504e74a, tag=MESL, update-interval=172800, opt-parser=true, enabled=false
-https://api-huacloud.dev/sub?target=quanx&list=true&emoji=true&tfo=true&udp=true&url=https%3A%2F%2Fapi.xmancdn.com%2Fosubscribe.php%3Fsid%3D155769%26token%3DC7bcRWWpOdej%26sip002%3D1, tag=花云, update-interval=172800, opt-parser=true, enabled=false
+https://sub1.sntp.dev/baseStr?token=96152189b9cf63b95d1e7057a235a277&timestamp=125480, tag=守候网络, update-interval=172800, opt-parser=true, enabled=true
 
 
 [filter_remote]
@@ -78,11 +66,23 @@ https://surge.short.gy/strm, tag=Streaming, force-policy=Streaming, update-inter
 https://surge.short.gy/okx, tag=OKX, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://surge.short.gy/talkatone, tag=Talkatone, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=WeChat, force-policy=WeChat, update-interval=172800, opt-parser=false, enabled=true
-https://surge.short.gy/proxy, tag=proxy, force-policy=Final, update-interval=172800, opt-parser=true, enabled=true
+https://surge.short.gy/proxy, tag=proxy, force-policy=Final, update-interval=172800, opt-parser=true, enabled=false
 https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, tag=ASN, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
 
 [filter_local]
+host-suffix, ddys.mov, direct
+host, api.onesignal.com, direct
+host, ipyp0a-inapps.appsflyersdk.com, direct
+host, wsdexpri.okx.com.cdn.cloudflare.net, direct
+host, d2p7qknqur0nu9.cloudfront.net, direct
+host, d3f0nrrzpmxcu1.cloudfront.net, direct
+host, h64.online-metrix.net, direct
+host, d1w1p0smpsoh5j.cloudfront.net, direct
+host, wspri.okx.com.cdn.cloudflare.net, direct
+host, aa.online-metrix.net, direct
+host, www.okx.com.cdn.cloudflare.net, direct
+host, d1nil3qbkxfj92.cloudfront.net, direct
 host, web3.okx.com.cdn.cloudflare.net, direct
 host-suffix, z.sfcj.org, Emby
 host-suffix, xmsl.org, Emby
