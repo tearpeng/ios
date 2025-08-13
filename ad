@@ -45,34 +45,7 @@ DOMAIN,sec.umeng.com,REJECT
 DOMAIN,ulogs.umeng.com,REJECT
 DOMAIN,ynuf.aliapp.org,REJECT
 DOMAIN,api.zuihuimai.com,REJECT
-# 广告联盟
-DOMAIN-KEYWORD,asiad.byteactivity,REJECT
-DOMAIN-KEYWORD,pangolin-sdk-toutiao,REJECT
-DOMAIN-KEYWORD,pangolin.snssdk.com,REJECT
-DOMAIN-KEYWORD,pglstatp-toutiao,REJECT
-DOMAIN-KEYWORD,video-cn.snssdk.com,REJECT
-DOMAIN-SUFFIX,ads.linkedin.com,REJECT
-DOMAIN-SUFFIX,ads.vungle.com,REJECT
-DOMAIN-SUFFIX,adukwai.com,REJECT
-DOMAIN-SUFFIX,applovin.com,REJECT
-DOMAIN-SUFFIX,applvn.com,REJECT
-DOMAIN-SUFFIX,appsflyer.com,REJECT
-DOMAIN-SUFFIX,kuaishouzt.com,REJECT
-DOMAIN-SUFFIX,miaozhen.com,REJECT
-DOMAIN-SUFFIX,ubixioe.com,REJECT
-DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
-DOMAIN-SUFFIX,v.smtcdns.com,REJECT
-DOMAIN,adapi.izuiyou.com,REJECT
-DOMAIN,adtracker.adfunlink.com,REJECT
-DOMAIN,dsp-x.jd.com,REJECT
-DOMAIN,et.tanx.com,REJECT
-DOMAIN,gdfp.gifshow.com,REJECT
-DOMAIN,init.supersonicads.com,REJECT
-DOMAIN,janapi.jd.com,REJECT
-DOMAIN,mercury-gateway.ixiaochuan.cn,REJECT
-DOMAIN,mon.toutiaocloud.com,REJECT
-DOMAIN,tangram.e.qq.com,REJECT
-DOMAIN,ws.tapjoyads.com,REJECT
+
 # ======= H ======= #
 # 海尔智家
 DOMAIN-SUFFIX,ehaier.com,REJECT
@@ -131,10 +104,7 @@ DOMAIN,affcpatrk.com,REJECT
 # ======= S ======= #
 # 数字联盟
 DOMAIN-SUFFIX,shuzilm.cn,REJECT
-# Speedtest
-DOMAIN-KEYWORD,-adsystem.com,REJECT
-DOMAIN,ads.pubmatic.com,REJECT
-DOMAIN,id.hadron.ad.gt,REJECT
+
 # ======= T ======= #
 # 太平洋保险
 DOMAIN,a.cpic.com.cn,REJECT
