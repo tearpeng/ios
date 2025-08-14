@@ -134,4 +134,3 @@ DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
 DOMAIN-SUFFIX,adsappier.com,REJECT
 DOMAIN-SUFFIX,appier.net,REJECT
 DOMAIN-SUFFIX,appiersig.com,REJECT
-DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT
